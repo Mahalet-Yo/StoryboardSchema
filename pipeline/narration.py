@@ -2,6 +2,7 @@ import base64
 import json
 import os
 import subprocess
+import sys
 import time
 from pathlib import Path
 import jsonschema
@@ -10,6 +11,12 @@ from google.genai import types
 from dotenv import load_dotenv
 
 load_dotenv()
+
+# --- FIX: Ensure project root is in Python's search path ---
+root_dir = Path(__file__).resolve().parent.parent
+if str(root_dir) not in sys.path:
+    sys.path.insert(0, str(root_dir))
+# ------------------------------------------------------------
 
 from pipeline.common import SCHEMA_PATH, STORYBOARD_PATH, compute_hash, log_run
 
@@ -35,7 +42,16 @@ def extract_audio_bytes(response) -> bytes:
                 inline = getattr(part, "inline_data", None)
                 if inline and getattr(inline, "data", None):
                     data = inline.data
-                    return base64.b64decode(data) if isinstance(data, str) else bytes(data)
+                    # Handle case where data is a base64 string or bytes object containing base64 text
+                    if isinstance(data, bytes):
+                        try:
+                            # Try decoding as utf-8 base64 string first
+                            return base64.b64decode(data.decode("utf-8"))
+                        except Exception:
+                            return data  # Fallback to raw bytes if not base64
+                    elif isinstance(data, str):
+                        return base64.b64decode(data)
+                    return bytes(data)
     raise ValueError("No inline audio bytes returned by Gemini TTS")
 
 
