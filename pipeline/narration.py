@@ -7,6 +7,9 @@ from pathlib import Path
 import jsonschema
 from google import genai
 from google.genai import types
+from dotenv import load_dotenv
+
+load_dotenv()
 
 from pipeline.common import SCHEMA_PATH, STORYBOARD_PATH, compute_hash, log_run
 
