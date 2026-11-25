@@ -16,8 +16,8 @@
       "character_ref": "daughter_child",
       "keyframe_prompt": "Cinematic 35mm medium close-up of an 8-year-old Ethiopian girl with neat braids and a white Netela shawl, gently pouring warm water from a small pitcher over her father's feet in a basin indoors, soft warm lamp light, earnest and humble expression",
       "motion_prompt": "Slow gentle push-in as water pours softly into the basin",
-      "narration_am": "በልጅነቴ የአባቴን እግር ስታጠብ፣ ልቡ በንጹህ ምርቃት ይሞላ ነበር።",
-      "narration_en": "When I was a child washing my father's feet, his heart would fill with pure blessings.",
+      "narration_am": "በልጅነቴ የአባቴን እግር ሳጥብ፣ ልቤ በብዙ ምርቃት ይሞላ ነበር።",
+      "narration_en": "When I was a child washing my father's feet, my heart would fill with pure alot of blessings.",
       "music_cue": "soft_krar_and_warm_pad"
     },
     {
@@ -27,8 +27,8 @@
       "character_ref": "father_and_daughter_child",
       "keyframe_prompt": "Cinematic 35mm medium shot of a kind middle-aged Ethiopian father sitting on a wooden chair in a warm, modest room while his young daughter washes his feet, placing a gentle blessing hand on her head with a warm, pure smile",
       "motion_prompt": "Subtle warm camera drift with soft candlelight glow",
-      "narration_am": "‘እግዚአብሔር ይባርክሽ፤ መንገድሽ የተከፈተ፣ ልብሽም የተረጋጋ ይሁን’ ይለኝ ነበር።",
-      "narration_en": "'May God bless you; may your path be open and your heart be at peace,' he used to pray.",
+      "narration_am": "‘እግዚአብሔር ይባርክሽ፤ በመንገድሽ እግዜብሄር ይቅደምልሽ፣ በጥበብ እና በማስተዋል ያሳድግሽ’ ይለኝ ነበር።",
+      "narration_en": "'May God bless you; May God lead the way in your path. and May He raise you in wisdom and understanding.,' he used to pray.",
       "music_cue": "gentle_strings_enter"
     },
     {
@@ -38,7 +38,7 @@
       "character_ref": "daughter_child",
       "keyframe_prompt": "Cinematic 35mm close-up of the 8-year-old Ethiopian girl looking up with trust and reverence as her father speaks blessings over her, warm golden rim light",
       "motion_prompt": "Slow gentle zoom toward her attentive eyes",
-      "narration_am": "በንጹህ ልብ የወጣ ቃል እንደ ዘር በውስጤ ተተክሎ አደገ።",
+      "narration_am": "ከንጹህ ልብ የወጡ ቃላቶች እንደ ዘር በውስጤ ተዘርተው አደገ።",
       "narration_en": "Words spoken from a pure heart took root inside me like a seed.",
       "music_cue": "warm_cello_and_krar"
     },
@@ -82,8 +82,8 @@
       "character_ref": "father_heaven",
       "keyframe_prompt": "Cinematic 35mm wide ethereal scene of soft luminous clouds and warm golden morning rays in a peaceful heavenly sky, serene and reverent atmosphere",
       "motion_prompt": "Slow forward drift through soft golden light",
-      "narration_am": "ከሰማይም አባቴ ሕይወቴን ሲያይ፣ ልቡ በደስታ ተሞላ።",
-      "narration_en": "From heaven, my father looked upon my life, and his heart filled with joy.",
+      "narration_am": "ከሰማይም አባቴ ሕይወቴን ሲያይ፣ ልቡ በደስታ ይሞላል።",
+      "narration_en": "From heaven, my father looked upon my life, and his heart will fill with joy.",
       "music_cue": "uplifting_choral_pad"
     },
     {
@@ -93,8 +93,8 @@
       "character_ref": "father_heaven",
       "keyframe_prompt": "Cinematic 35mm medium close-up of the father in radiant, peaceful golden light looking down with a joyful, thankful smile and gentle tears of gratitude toward heaven",
       "motion_prompt": "Slow gentle hold with soft golden glow",
-      "narration_am": "ልጁን በምርቃቱ ስትኖር አይቶ፣ እግዚአብሔርን ከልብ አመሰገነ።",
-      "narration_en": "Seeing his daughter living in his blessings, he thanked God from his heart.",
+      "narration_am": "ልጁ በምርቃቱ ስትኖር አይቶ፣ ይደሰታል።",
+      "narration_en": "Seeing his daughter living in his blessings, He will be happy.",
       "music_cue": "gentle_resolution_fade"
     }
   ]
