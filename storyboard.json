@@ -75,7 +75,7 @@
       42
     ],
     "selected_seed": 23,
-    "selection_reason": "See EXPERIMENTS.md E7: seed 23 leaves the most space under the voice in shots 1-3 and its brighter section lands on the time-jump at shot 4.",
+    "selection_reason": "Synth fallback (ACE-Step Space unavailable, FAILURES.md F4). Seed 23 has the lowest energy share in the 300-3400 Hz speech band (0.0923 vs 0.0943 and 0.0953, outputs/music/candidates.json). The margin is small, so the metric is a tie-breaker, not proof (EXPERIMENTS.md E7).",
     "cues": [
       {
         "id": "memory",
@@ -102,12 +102,12 @@
   "mix": {
     "narration_lufs": -16,
     "music_lufs": -16,
-    "music_gain_db": -9,
+    "music_gain_db": -6,
     "duck": {
-      "threshold": 0.05,
-      "ratio": 4,
-      "attack_ms": 120,
-      "release_ms": 900
+      "threshold": 0.02,
+      "ratio": 6,
+      "attack_ms": 300,
+      "release_ms": 1500
     },
     "target_lufs": -14,
     "true_peak_db": -1.0
@@ -237,7 +237,7 @@
       "characters": [
         "father"
       ],
-      "keyframe_prompt": "medium close-up of the father bathed in radiant, peaceful golden light against soft clouds, looking down with a joyful, thankful smile",
+      "keyframe_prompt": "medium close-up of the father standing outdoors on a highland hilltop at golden hour, radiant warm sun rays and soft luminous clouds behind him, looking down with a joyful, thankful smile, peaceful",
       "seed": 108,
       "camera_move": "pull_out",
       "motion_prompt": "slow gentle hold with soft golden glow",
