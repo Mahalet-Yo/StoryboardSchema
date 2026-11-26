@@ -159,10 +159,15 @@ def subtitle_events(board: dict, timeline: dict, wrap: int = 42) -> list[tuple[f
         start, span = s["speech_start"] - 0.1, s["speech_s"] + 0.5
         weights = [len(c) for c in chunks]
         t = start
-        for c, w in zip(chunks, weights):
+        for c, w in zip(chunks, weights, strict=False):
             dur = span * w / sum(weights)
-            events.append((t, t + dur, "\\N".join(textwrap.wrap(c, wrap))))
-            t += dur
+            # A chunk can still word-wrap to three lines; show it as consecutive two-line events.
+            lines = textwrap.wrap(c, wrap)
+            pairs = [lines[i:i + 2] for i in range(0, len(lines), 2)]
+            for pair in pairs:
+                part = dur * sum(map(len, pair)) / sum(map(len, lines))
+                events.append((t, t + part, "\\N".join(pair)))
+                t += part
     return events
 
 
