@@ -34,7 +34,7 @@ The film is about the relationship between an Ethiopian father and his daughter,
 
 | Shot | Size / move | Reason (also in `storyboard.json`) | Narration (English subtitle) |
 |---|---|---|---|
-| 1 | insert, push in | Opens on the ritual itself, hands and water only: the act of service that earns the blessing, before any face | As a child, washing my father's feet, my heart would fill with so many blessings. |
+| 1 | medium close-up (profile), push in | Opens on the daughter's face as she pours: the audience meets her before the ritual. Was an insert of hands and water until test 2 asked for her face (§6) | As a child, washing my father's feet, my heart would fill with so many blessings. |
 | 2 | medium, pull out | Father and daughter in one frame; the hand on the head is the film's motif | 'May God bless you, may He go before you on your path, may He raise you in wisdom and understanding,' he would say. |
 | 3 | close-up, push in | The child's face is where the words land: the seed the rest of the film grows from | Words from a pure heart were sown in me like a seed, and they grew. |
 | 4 | wide establishing, pan right | An empty landscape and an empty chair carry the time jump and the death without a funeral | Many years passed. My father went home to his Creator, but his blessing stayed with me. |
@@ -72,30 +72,35 @@ The English subtitles were then rewritten to match the revised Amharic. The earl
 These were not audience feedback; they came from looking at the generated material. Details and evidence are in EXPERIMENTS.md.
 - **Characters looked Mediterranean, not Ethiopian.** The descriptions now name skin tone, features, hair and the tibeb border (E1). This mattered most for this audience: the people in the film have to look like their own families.
 - **The child is never conditioned on an adult's image, and vice versa** (E2). Continuity across the 17-year jump comes from the shared description and the tibeb border, which appears at both ages.
-- **Shot 1 became an insert of hands and water** (E4). The film now opens on the ritual before any face, which test 2 should confirm or reject.
+- **Shot 1 became an insert of hands and water** (E4), to get past the output filter. Test 2 rejected it: viewers wanted her face first, so §6 changes it again.
 - **The measured narration set the cut** (E11). Shot 2, the blessing, got the 11.5 s it needs, so the most important line is never rushed.
 - **Ducking from the brief beat my guess** (E8): the voice stays clear without the music vanishing.
 
 ## 6. User test 2: the near-final cut
 
-> **Status: to run before submission.** Show `outputs/final/film.vertical.mp4` on a phone to at least three people from the audience above, in person or on Slack. Ask the questions below. Then write their answers here and record any storyboard change as a commit. Leave this section marked pending rather than filling it from memory.
+**When / who:** 26 November 2026. Three people from the intended audience watched the near-final vertical cut (81.25 s, the version committed before this change) and answered the seven questions below. Their answers were compiled into one set; where they agreed, the answer below is the shared one.
 
-**Questions:**
-1. In one sentence, what is the film about? (Checks that the story lands without explanation.)
-2. What did you feel at the end? (Compare with the intent: "a blessing doesn't end with the parent".)
-3. Did the girl and the woman read as the same person? Did the father look the same in shots 2 and 8?
-4. Native speakers: was any Amharic word mispronounced or unnatural? Which shot?
-5. With sound off: could you follow it from the subtitles alone?
-6. Was the music ever too loud or distracting under the voice?
-7. Does opening on the hands (shot 1) work, or would you rather see her face first?
+| # | Question | What they said | Reading |
+|---|---|---|---|
+| 1 | In one sentence, what is the film about? | "The relationship, love and respect between an Ethiopian father and daughter." | ✓ The story lands without explanation; matches the logline |
+| 2 | What did you feel at the end? | "I feel the emotion the girl feels." | ✓ Close to the intent (the blessing lives on in her); they identify with the daughter |
+| 3 | Did the girl and the woman read as one person; the father the same in shots 2 and 8? | Yes | ✓ The reference-sheet approach works (E1, E2, E6) |
+| 4 | Was any Amharic word mispronounced or unnatural? Which shot? | **Yes: shot 3 and "9"** | ✗ Narration problem (see below) |
+| 5 | With sound off, could you follow from the subtitles alone? | Yes | ✓ Subtitles carry the story |
+| 6 | Was the music ever too loud under the voice? | No | ✓ Confirms the ducking choice from E8 by ear |
+| 7 | Hands first (shot 1), or her face first? | **"I would rather see her face."** | ✗ Change shot 1 |
 
-| Person (role, not name) | Watched on | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 |
-|---|---|---|---|---|---|---|---|---|
-| Viewer 1 | | | | | | | | |
-| Viewer 2 | | | | | | | | |
-| Viewer 3 | | | | | | | | |
+A separate viewer comment from the same round: the narrator "doesn't sound fluent" in places, especially the father's blessing (shot 2).
 
-**What changed because of it:** _(storyboard edits, with commit ids; or "nothing, because…")_
+### What changed because of it
+
+| Feedback | Change | Status |
+|---|---|---|
+| Q7: see her face first | Shot 1 changed from an insert of hands and water to a profile medium close-up of the girl's face as she pours from the clay pitcher. The father's feet stay out of frame, which keeps it clear of the output filter (F3). Reason updated in `storyboard.json`. First try merged the oil lamp and the pitcher (she "poured" from a lit lamp); the second prompt names a clay pitcher and puts the light off frame (EXPERIMENTS E14) | **Done.** 4 image calls, only shot 1 regenerated |
+| Q4: shot 3 sounds wrong | Likely cause in the text: ከንጹህ ልብ የወጡ **ቃላቶች** … ተዘርተው **አደገ** has a plural subject with a singular verb, and ቃላቶች is a double plural. The proposed line is ከንጹህ ልብ የወጡ **ቃላት** … ተዘርተው **አደጉ**, to be confirmed by a native speaker | **Blocked:** re-voicing needs TTS, and both TTS models are out of daily quota until after the deadline (FAILURES F11) |
+| Q4 "9" and the fluency comment: shot 2 | Shot 2 starts at 9 s, so "9" most likely points at the father's blessing. That line spelled God two ways (እግዚአብሔር / እግዜብሄር) and used curly quotes; the fix is one spelling and «…». The deeper cause is the smaller Flash-Lite TTS model (F2, F11) | **Blocked** for the same reason; the text fix is written and ready |
+
+**What we learned:** the pictures and the mix now work for this audience. The weak link is the Amharic voice, and that is a quota problem, not a design one: the full Flash TTS model and two corrected lines are the first thing to redo when the quota resets.
 
 ## 7. Reflection
 
