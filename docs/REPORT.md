@@ -45,6 +45,7 @@ The lesson isn't that the practice is wrong. A pipeline built around one hosted 
 - **Measured ducking instead of tuning by ear** (E8, `make duck-sweep`): a reusable tool that measures any setting on your own stems.
 - **A probe of the safety filter's determinism** (E5): the finding changed the code.
 - **A score composer in the tezeta mode**, Ethiopia's mode of nostalgia, driven by spotting cues: an open, deterministic alternative to a hosted music model.
+- **The same line in Tigrinya and Afaan Oromo** (E13). TTS did *not* refuse Oromo, although it is off the language list. The weak spot was translation: the Tigrinya keeps Amharic verb forms, and the overloaded Flash models pushed the work to Flash-Lite (F10). Length matters too: Oromo ran 1.44× the Amharic, and the narration-driven timeline absorbs it. [Add the native speakers' verdict.]
 - **A tool others can use:**
   - the CLI (`python -m pipeline`);
   - a Docker image;
