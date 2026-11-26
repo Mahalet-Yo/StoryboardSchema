@@ -44,7 +44,7 @@ def run() -> list[dict]:
     out_dir = OUTPUTS / "experiments"
     out_dir.mkdir(parents=True, exist_ok=True)
     speech = [(s["speech_start"], s["speech_start"] + s["speech_s"]) for s in tl["shots"]]
-    pauses = [(a[1] + 0.3, b[0] - 0.3) for a, b in zip(speech, speech[1:]) if b[0] - a[1] > 1.0]
+    pauses = [(a[1] + 0.3, b[0] - 0.3) for a, b in zip(speech, speech[1:], strict=False) if b[0] - a[1] > 1.0]
     rows = []
     for st in SETTINGS:
         tmp = out_dir / "ducked.tmp.wav"
