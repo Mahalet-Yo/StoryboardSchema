@@ -15,6 +15,9 @@ Real spend: **$0**. Everything ran on free tiers and a CPU laptop (8 cores, 15 G
 | music | local | synth-tezeta-v1 | 3 | 0 | 3.8 | 11.3 | 0 (CPU) | 0 (local) | $0 |
 | narration | gemini | gemini-3.8-flash-lite-tts | 8 | 1 | 3.9 | 31.2 | 0 | 0.0076 | $0 |
 | shots | local | ffmpeg-zoompan | 18 | 0 | 7.6 | 136.0 | 0 (CPU) | 0 (local) | $0 |
+| smoke | cloudflare | @cf/black-forest-labs/flux-2-klein-4b | 1 | 0 | 9.3 | 9.3 | 0 | n/a | $0 |
+| smoke | gemini | gemini-3.5-flash-lite | 1 | 0 | 1.9 | 1.9 | 0 | n/a | $0 |
+| smoke | hf-space | ACE-Step/Ace-Step-v1.5 (reachability) | 1 | 0 | 12.0 | 12.0 | 0 | n/a | $0 |
 
 List-price total for every logged call: **$0.0560**. Real spend: **$0** (free tiers and a CPU laptop).
 <!-- generated:end -->
