@@ -1,0 +1,6 @@
+.env
+.venv
+**/__pycache__
+outputs/clips/*.mp4
+outputs/audio/*.wav
+outputs/final/*.mp4

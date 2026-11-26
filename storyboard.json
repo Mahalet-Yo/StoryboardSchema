@@ -1,101 +1,249 @@
 {
+  "version": 2,
   "title": "The Blessings of Pure Hands",
+  "logline": "A daughter who once washed her father's feet carries his spoken blessing through his death and into her adult life.",
   "language": "am",
-  "aspect_ratios": ["9:16", "16:9"],
-  "total_duration_sec": 75,
-  "style_reference": {
-    "medium": "cinematic 35mm film, natural grain, warm emotional lighting",
-    "cultural_elements": "Ethiopian home interior, warm water basin, Netela, Habesha Kemis, highland morning light",
-    "palette": "warm earth tones, golden hour amber, soft sky blue"
+  "subtitle_language": "en",
+  "aspect_ratios": [
+    "9:16",
+    "16:9"
+  ],
+  "style_block": "warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, Ethiopian highland home, subject centred in frame, painterly but realistic, no text, no lettering",
+  "characters": {
+    "father": {
+      "description": "a kind Habesha Ethiopian man in his late forties with dark brown skin, East African features, short greying tightly curled hair and a short grey beard, warm brown eyes, wearing a white cotton gabi shawl over a simple shirt",
+      "sheet_prompt": "portrait reference photo of a kind Habesha Ethiopian man in his late forties with dark brown skin and East African features, short greying tightly curled hair, short grey beard, warm brown eyes, white cotton gabi shawl over a simple shirt, gentle smile, head and shoulders, front view, plain warm background",
+      "seed": 4101,
+      "consent": {
+        "recorded": true,
+        "basis": "fictional",
+        "note": "Composite character; no real person's face or voice is reproduced. See ETHICS.md."
+      }
+    },
+    "daughter_child": {
+      "description": "an eight-year-old Habesha Ethiopian girl with dark brown skin, East African features, hair in neat cornrow braids (shuruba), round face, big dark eyes, wearing a white cotton dress with a thin green-yellow-red tibeb border",
+      "sheet_prompt": "portrait reference photo of an eight-year-old Habesha Ethiopian girl with dark brown skin and East African features, hair in neat cornrow braids (shuruba), round face, big dark eyes, white cotton dress with a thin green-yellow-red tibeb border, shy smile, head and shoulders, front view, plain warm background",
+      "seed": 4102,
+      "consent": {
+        "recorded": true,
+        "basis": "fictional",
+        "note": "Composite character; no real child is depicted. See ETHICS.md."
+      }
+    },
+    "daughter_adult": {
+      "description": "a twenty-five-year-old Habesha Ethiopian woman with dark brown skin, East African features, a grown adult face, big dark eyes, hair in cornrow braids gathered back, wearing a white habesha kemis with a green-yellow-red tibeb border",
+      "sheet_prompt": "portrait reference photo of a twenty-five-year-old Habesha Ethiopian woman with dark brown skin and East African features, round face, big dark eyes, hair in cornrow braids gathered back, white habesha kemis with a green-yellow-red tibeb border, calm confident smile, head and shoulders, front view, plain warm background",
+      "seed": 4103,
+      "consent": {
+        "recorded": true,
+        "basis": "fictional",
+        "note": "Composite character; shares the child's written description (face, eyes, tibeb border) because conditioning an adult on the child's image was refused by the provider's safety filter (FAILURES.md F3)."
+      }
+    }
+  },
+  "providers": {
+    "tts": {
+      "model": "gemini-3.8-flash-lite-tts",
+      "fallback_models": [
+        "gemini-3.8-flash-tts"
+      ],
+      "voice": "Kore",
+      "style": "a grown daughter remembering her late father: warm, tender, unhurried, quiet reverence, close to the microphone"
+    },
+    "image": {
+      "model": "@cf/black-forest-labs/flux-2-klein-4b",
+      "steps": 4,
+      "reference_max_px": 496
+    },
+    "motion": {
+      "provider": "kenburns",
+      "fps": 24
+    },
+    "music": {
+      "provider": "ace-step-space",
+      "space": "ACE-Step/Ace-Step-v1.5",
+      "infer_steps": 8
+    }
+  },
+  "music": {
+    "caption": "slow reverent instrumental film score, Ethiopian krar plucks in a tezeta mode, warm low drone, soft string pad, tender and nostalgic, sparse, no drums, no vocals",
+    "bpm": 66,
+    "key": "C tezeta (pentatonic)",
+    "candidate_seeds": [
+      11,
+      23,
+      42
+    ],
+    "selected_seed": 23,
+    "selection_reason": "Synth fallback (ACE-Step Space unavailable, FAILURES.md F4). Seed 23 has the lowest energy share in the 300-3400 Hz speech band (0.0923 vs 0.0943 and 0.0953, outputs/music/candidates.json). The margin is small, so the metric is a tie-breaker, not proof (EXPERIMENTS.md E7).",
+    "cues": [
+      {
+        "id": "memory",
+        "from_shot": "shot_01",
+        "intent": "krar alone, very quiet: a remembered room"
+      },
+      {
+        "id": "time_passes",
+        "from_shot": "shot_04",
+        "intent": "pad opens up, the loss and the years"
+      },
+      {
+        "id": "fulfilment",
+        "from_shot": "shot_05",
+        "intent": "fullest texture: the blessing come true"
+      },
+      {
+        "id": "resolution",
+        "from_shot": "shot_08",
+        "intent": "thin back to krar and resolve on the tonic over the end card"
+      }
+    ]
+  },
+  "mix": {
+    "narration_lufs": -16,
+    "music_lufs": -16,
+    "music_gain_db": -6,
+    "duck": {
+      "threshold": 0.02,
+      "ratio": 6,
+      "attack_ms": 300,
+      "release_ms": 1500
+    },
+    "target_lufs": -14,
+    "true_peak_db": -1.0
+  },
+  "end_card": {
+    "lines": [
+      "The Blessings of Pure Hands",
+      "Made with AI",
+      "Images: FLUX.2 klein · Voice: Gemini TTS · Score: generated in code",
+      "Characters are fictional composites"
+    ],
+    "duration_sec": 3.5
   },
   "shots": [
     {
       "shot_id": "shot_01",
+      "reason": "Opens on the ritual itself, hands and water only: the act of service that earns the blessing, before we see any face.",
       "duration_sec": 9,
-      "camera_type": "medium_close_up",
-      "character_ref": "daughter_child",
-      "keyframe_prompt": "Cinematic 35mm medium close-up of an 8-year-old Ethiopian girl with neat braids and a white Netela shawl, gently pouring warm water from a small pitcher over her father's feet in a basin indoors, soft warm lamp light, earnest and humble expression",
-      "motion_prompt": "Slow gentle push-in as water pours softly into the basin",
+      "camera_type": "insert_shot",
+      "characters": [],
+      "keyframe_prompt": "insert shot from above: small hands hold a clay pitcher and pour a thin stream of warm water into a wide metal basin on a woven straw mat, a white cotton dress hem with a green-yellow-red tibeb border at the edge of frame, oil lamp glow, steam rising",
+      "seed": 101,
+      "camera_move": "push_in",
+      "motion_prompt": "slow gentle push-in as water pours softly into the basin",
       "narration_am": "በልጅነቴ የአባቴን እግር ሳጥብ፣ ልቤ በብዙ ምርቃት ይሞላ ነበር።",
-      "narration_en": "When I was a child washing my father's feet, my heart would fill with pure alot of blessings.",
-      "music_cue": "soft_krar_and_warm_pad"
+      "narration_en": "As a child, washing my father's feet, my heart would fill with so many blessings.",
+      "music_cue": "memory"
     },
     {
       "shot_id": "shot_02",
+      "reason": "Puts father and daughter in one frame so the audience sees who blesses whom; the hand on the head is the film's motif.",
       "duration_sec": 9,
       "camera_type": "medium_shot",
-      "character_ref": "father_and_daughter_child",
-      "keyframe_prompt": "Cinematic 35mm medium shot of a kind middle-aged Ethiopian father sitting on a wooden chair in a warm, modest room while his young daughter washes his feet, placing a gentle blessing hand on her head with a warm, pure smile",
-      "motion_prompt": "Subtle warm camera drift with soft candlelight glow",
+      "characters": [
+        "father",
+        "daughter_child"
+      ],
+      "keyframe_prompt": "medium shot: the father sits on a low wooden chair with his feet in a metal basin of water; the girl kneels on the mat beside the basin and looks up at him; he rests one gentle hand on top of her head in blessing, warm pure smile",
+      "seed": 102,
+      "camera_move": "pull_out",
+      "motion_prompt": "subtle slow pull-back with soft lamp glow",
       "narration_am": "‘እግዚአብሔር ይባርክሽ፤ በመንገድሽ እግዜብሄር ይቅደምልሽ፣ በጥበብ እና በማስተዋል ያሳድግሽ’ ይለኝ ነበር።",
-      "narration_en": "'May God bless you; May God lead the way in your path. and May He raise you in wisdom and understanding.,' he used to pray.",
-      "music_cue": "gentle_strings_enter"
+      "narration_en": "'May God bless you, may He go before you on your path, may He raise you in wisdom and understanding,' he would say.",
+      "music_cue": "memory"
     },
     {
       "shot_id": "shot_03",
+      "reason": "The close-up on the child's face is where the words land; it is the seed the rest of the film grows from.",
       "duration_sec": 9,
       "camera_type": "close_up",
-      "character_ref": "daughter_child",
-      "keyframe_prompt": "Cinematic 35mm close-up of the 8-year-old Ethiopian girl looking up with trust and reverence as her father speaks blessings over her, warm golden rim light",
-      "motion_prompt": "Slow gentle zoom toward her attentive eyes",
+      "characters": [
+        "daughter_child"
+      ],
+      "keyframe_prompt": "close-up portrait of the girl's face looking up with trust and reverence, listening, warm golden rim light, soft lamp-lit room behind her",
+      "seed": 103,
+      "camera_move": "push_in",
+      "motion_prompt": "very slow push toward her eyes",
       "narration_am": "ከንጹህ ልብ የወጡ ቃላቶች እንደ ዘር በውስጤ ተዘርተው አደገ።",
-      "narration_en": "Words spoken from a pure heart took root inside me like a seed.",
-      "music_cue": "warm_cello_and_krar"
+      "narration_en": "Words from a pure heart were sown in me like a seed, and they grew.",
+      "music_cue": "memory"
     },
     {
       "shot_id": "shot_04",
+      "reason": "An empty landscape carries the time jump and the death without showing a funeral; the sunrise says the blessing outlives him.",
       "duration_sec": 10,
       "camera_type": "wide_establishing",
-      "character_ref": "none",
-      "keyframe_prompt": "Cinematic 35mm wide shot of golden sunrise breaking over misty green Ethiopian highland hills and a quiet courtyard at dawn, peaceful morning light",
-      "motion_prompt": "Slow pan across the sunlit highlands",
+      "characters": [],
+      "keyframe_prompt": "wide shot of golden sunrise breaking over misty green Ethiopian highland hills, a small house with a corrugated roof and eucalyptus trees in the foreground, empty wooden chair by the doorway, peaceful dawn",
+      "seed": 104,
+      "camera_move": "pan_right",
+      "motion_prompt": "slow pan across the sunlit highlands, mist drifting",
       "narration_am": "ብዙ ዓመታት አለፉ፤ አባቴም ወደ ፈጣሪው ሄደ፣ ግን ምርቃቱ አብሮኝ ቆየ።",
-      "narration_en": "Many years passed; my father went to his Creator, yet his blessings stayed with me.",
-      "music_cue": "tempo_lifts_hopeful_theme"
+      "narration_en": "Many years passed. My father went home to his Creator, but his blessing stayed with me.",
+      "music_cue": "time_passes"
     },
     {
       "shot_id": "shot_05",
+      "reason": "Shows the blessing fulfilled: the same girl, now grown, standing in the light he wished for her.",
       "duration_sec": 9,
       "camera_type": "medium_shot",
-      "character_ref": "daughter_adult",
-      "keyframe_prompt": "Cinematic 35mm medium shot of a 25-year-old Ethiopian woman wearing a refined Habesha Kemis with subtle gold embroidery, standing calmly and confidently in warm morning sunlight with a serene smile",
-      "motion_prompt": "Slow tracking push-in as morning light illuminates her face",
+      "characters": [
+        "daughter_adult"
+      ],
+      "keyframe_prompt": "medium shot of the woman standing calmly and confidently in a sunlit courtyard in warm morning light, serene smile",
+      "seed": 105,
+      "camera_move": "push_in",
+      "motion_prompt": "slow tracking push-in as morning light reaches her face",
       "narration_am": "የተመኘልኝ ሰላም፣ ጥበብ እና ክብር በሕይወቴ አንድ በአንድ ተፈጸሙ።",
-      "narration_en": "The peace, wisdom, and grace he wished for me came true in my life, one by one.",
-      "music_cue": "full_warm_ensemble"
+      "narration_en": "The peace, wisdom and honour he wished for me came true in my life, one by one.",
+      "music_cue": "fulfilment"
     },
     {
       "shot_id": "shot_06",
+      "reason": "The emotional peak: gratitude on her face as she remembers him, mirroring the child's close-up in shot 3.",
       "duration_sec": 9,
       "camera_type": "close_up",
-      "character_ref": "daughter_adult",
-      "keyframe_prompt": "Cinematic 35mm close-up of the 25-year-old Ethiopian woman with gentle tears of gratitude in her eyes, looking softly upward as warm sunlight touches her face",
-      "motion_prompt": "Slow subtle tilt with soft natural light shift",
+      "characters": [
+        "daughter_adult"
+      ],
+      "keyframe_prompt": "close-up of the woman with gentle tears of gratitude in her eyes, looking softly upward, warm sunlight touching her face",
+      "seed": 106,
+      "camera_move": "tilt_up",
+      "motion_prompt": "slow subtle tilt up with soft light shift",
       "narration_am": "በእያንዳንዱ ስኬቴ ውስጥ የአባቴን ንጹህ ልብ አስታውሳለሁ።",
-      "narration_en": "In every blessing I receive, I remember my father's pure heart.",
-      "music_cue": "intimate_piano_and_voice_space"
+      "narration_en": "In every success of mine, I remember my father's pure heart.",
+      "music_cue": "fulfilment"
     },
     {
       "shot_id": "shot_07",
+      "reason": "A transition to the father's point of view; luminous sky instead of a literal heaven keeps it reverent for every faith.",
       "duration_sec": 10,
       "camera_type": "extreme_wide",
-      "character_ref": "father_heaven",
-      "keyframe_prompt": "Cinematic 35mm wide ethereal scene of soft luminous clouds and warm golden morning rays in a peaceful heavenly sky, serene and reverent atmosphere",
-      "motion_prompt": "Slow forward drift through soft golden light",
+      "characters": [],
+      "keyframe_prompt": "wide ethereal view of soft luminous clouds and warm golden rays of morning light over the highlands far below, serene reverent atmosphere",
+      "seed": 107,
+      "camera_move": "tilt_down",
+      "motion_prompt": "slow forward drift through soft golden light",
       "narration_am": "ከሰማይም አባቴ ሕይወቴን ሲያይ፣ ልቡ በደስታ ይሞላል።",
-      "narration_en": "From heaven, my father looked upon my life, and his heart will fill with joy.",
-      "music_cue": "uplifting_choral_pad"
+      "narration_en": "And when my father looks on my life from heaven, his heart fills with joy.",
+      "music_cue": "fulfilment"
     },
     {
       "shot_id": "shot_08",
+      "reason": "Closes the circle on the father's face: the joy of the one who gave the blessing.",
       "duration_sec": 10,
       "camera_type": "medium_close_up",
-      "character_ref": "father_heaven",
-      "keyframe_prompt": "Cinematic 35mm medium close-up of the father in radiant, peaceful golden light looking down with a joyful, thankful smile and gentle tears of gratitude toward heaven",
-      "motion_prompt": "Slow gentle hold with soft golden glow",
+      "characters": [
+        "father"
+      ],
+      "keyframe_prompt": "medium close-up of the father standing outdoors on a highland hilltop at golden hour, radiant warm sun rays and soft luminous clouds behind him, looking down with a joyful, thankful smile, peaceful",
+      "seed": 108,
+      "camera_move": "pull_out",
+      "motion_prompt": "slow gentle hold with soft golden glow",
       "narration_am": "ልጁ በምርቃቱ ስትኖር አይቶ፣ ይደሰታል።",
-      "narration_en": "Seeing his daughter living in his blessings, He will be happy.",
-      "music_cue": "gentle_resolution_fade"
+      "narration_en": "Seeing his daughter live by his blessing, he rejoices.",
+      "music_cue": "resolution"
     }
   ]
 }

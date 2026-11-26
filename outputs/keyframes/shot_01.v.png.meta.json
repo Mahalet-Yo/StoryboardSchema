@@ -1,0 +1,18 @@
+{
+  "input_hash": "bcb0d11686372f5fadb894f6a3236be1fc082c84b5b1b37242ceab1da88a0a20",
+  "output_hash": "71aac3e9a60922cdcc9d27daafb8a4dd4830be2bc4f6bdba55294fb51304905f",
+  "run_id": "20261126T195427-7ae4",
+  "created": "2026-11-26T16:54:39Z",
+  "inputs": {
+    "prompt": "insert shot from above: small hands hold a clay pitcher and pour a thin stream of warm water into a wide metal basin on a woven straw mat, a white cotton dress hem with a green-yellow-red tibeb border at the edge of frame, oil lamp glow, steam rising. vertical 9:16 composition. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, Ethiopian highland home, subject centred in frame, painterly but realistic, no text, no lettering",
+    "size": [
+      768,
+      1344
+    ],
+    "seed": 101,
+    "steps": 4,
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "refs": [],
+    "ref_max_px": 496
+  }
+}

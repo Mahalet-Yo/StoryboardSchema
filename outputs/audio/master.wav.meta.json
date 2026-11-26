@@ -1,0 +1,67 @@
+{
+  "input_hash": "a9cab640d8666b3502af85ae95507f250232c7344305bcb09e0e6ec341875e2d",
+  "output_hash": "c9bf15d7facb1291d01bf250416263f1a2d5d76481ae1838c49b9ba0cf3b07ed",
+  "run_id": "20261126T202007-6196",
+  "created": "2026-11-26T17:20:58Z",
+  "inputs": {
+    "lines": [
+      [
+        "shot_01",
+        0.7,
+        "97a0fc153ac026552cfaa194326e0ca898caf2eb5571d8af14b56cfd066d9e2e"
+      ],
+      [
+        "shot_02",
+        9.7,
+        "5cfa87354208523330ca62bf4fa9a049bfa46e4dc8b419f94a88a4e76822a23d"
+      ],
+      [
+        "shot_03",
+        21.2,
+        "3ad445a44d9abca58aa9fb04f64195b76d956820581af40ba5cca61682fdcd0d"
+      ],
+      [
+        "shot_04",
+        30.2,
+        "ce1d17b31455dacd39c3dec920419d5426b7b03258cefbec9d76de179c1d78cc"
+      ],
+      [
+        "shot_05",
+        40.325,
+        "360d7bcbe64873b3dd3cb116875afce01a29218fa0917e1323d1a4a7ae0d93d1"
+      ],
+      [
+        "shot_06",
+        49.45,
+        "ff653f44bac2bda3201e3cbabda9ccdb42ba3969838e8d364f3828a0e3da52c7"
+      ],
+      [
+        "shot_07",
+        58.45,
+        "7a004e581ad95d23d1fc91782a9b6a127283f3f1c5c0971ddd2019da9af6526c"
+      ],
+      [
+        "shot_08",
+        68.45,
+        "75343bbd7e4c4533d4dfba39e10be637b93b997064b54f4ad9b9fc41b8c9ba34"
+      ]
+    ],
+    "music": "6788994d1797d891dfb919c30a983ba7603c99bbc3f2ea0f897e2a937e851138",
+    "mix": {
+      "narration_lufs": -16,
+      "music_lufs": -16,
+      "music_gain_db": -6,
+      "duck": {
+        "threshold": 0.02,
+        "ratio": 6,
+        "attack_ms": 300,
+        "release_ms": 1500
+      },
+      "target_lufs": -14,
+      "true_peak_db": -1.0
+    },
+    "total": 81.25,
+    "codec_headroom_db": 0.7
+  },
+  "pre_master_lufs": "-17.64"
+}

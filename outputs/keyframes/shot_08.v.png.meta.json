@@ -1,0 +1,21 @@
+{
+  "input_hash": "eaab0138aff656868cff1863aca9a74ee3c2e6ebe5a856a96148aef9567eb38b",
+  "output_hash": "81e4edeca418281315213107df2d97a5ab5e430634a9347875448200a1b4901b",
+  "run_id": "20261126T202007-6196",
+  "created": "2026-11-26T17:20:18Z",
+  "inputs": {
+    "prompt": "medium close-up of the father standing outdoors on a highland hilltop at golden hour, radiant warm sun rays and soft luminous clouds behind him, looking down with a joyful, thankful smile, peaceful. Characters (match the reference images exactly): father = a kind Habesha Ethiopian man in his late forties with dark brown skin, East African features, short greying tightly curled hair and a short grey beard, warm brown eyes, wearing a white cotton gabi shawl over a simple shirt. vertical 9:16 composition. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, Ethiopian highland home, subject centred in frame, painterly but realistic, no text, no lettering",
+    "size": [
+      768,
+      1344
+    ],
+    "seed": 108,
+    "steps": 4,
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "refs": [
+      "213a7cb684165685f1633c3b972020b075f4ca0b3cfb9790f200032263f487fe"
+    ],
+    "ref_max_px": 496
+  },
+  "seed_used": 108
+}

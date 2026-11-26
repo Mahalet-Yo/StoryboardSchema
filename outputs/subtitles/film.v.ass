@@ -1,0 +1,27 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,DejaVu Sans,46,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,0,100,100,0,0,1,3.2,1.5,2,60,60,384,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.60,0:00:03.55,Default,,0,0,0,,{\fad(150,150)}As a child, washing my father's\Nfeet,
+Dialogue: 0,0:00:03.55,0:00:06.98,Default,,0,0,0,,{\fad(150,150)}my heart would fill with so many\Nblessings.
+Dialogue: 0,0:00:09.60,0:00:14.43,Default,,0,0,0,,{\fad(150,150)}'May God bless you, may He go\Nbefore you on your path,
+Dialogue: 0,0:00:14.43,0:00:19.80,Default,,0,0,0,,{\fad(150,150)}may He raise you in wisdom and\Nunderstanding,' he would say.
+Dialogue: 0,0:00:21.10,0:00:27.42,Default,,0,0,0,,{\fad(150,150)}Words from a pure heart were sown\Nin me like a seed, and they grew.
+Dialogue: 0,0:00:30.10,0:00:35.64,Default,,0,0,0,,{\fad(150,150)}Many years passed. My father went\Nhome to his Creator,
+Dialogue: 0,0:00:35.64,0:00:38.92,Default,,0,0,0,,{\fad(150,150)}but his blessing stayed with me.
+Dialogue: 0,0:00:40.23,0:00:46.40,Default,,0,0,0,,{\fad(150,150)}The peace, wisdom and honour he\Nwished for me came true in my
+Dialogue: 0,0:00:46.40,0:00:46.92,Default,,0,0,0,,{\fad(150,150)}life,
+Dialogue: 0,0:00:46.92,0:00:48.02,Default,,0,0,0,,{\fad(150,150)}one by one.
+Dialogue: 0,0:00:49.35,0:00:54.47,Default,,0,0,0,,{\fad(150,150)}In every success of mine, I\Nremember my father's pure heart.
+Dialogue: 0,0:00:58.35,0:01:02.23,Default,,0,0,0,,{\fad(150,150)}And when my father looks on my\Nlife from heaven,
+Dialogue: 0,0:01:02.23,0:01:04.25,Default,,0,0,0,,{\fad(150,150)}his heart fills with joy.
+Dialogue: 0,0:01:08.35,0:01:12.58,Default,,0,0,0,,{\fad(150,150)}Seeing his daughter live by his\Nblessing, he rejoices.

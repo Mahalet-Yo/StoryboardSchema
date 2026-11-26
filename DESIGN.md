@@ -1,124 +1,102 @@
-# DESIGN.md
+# Design: The Blessings of Pure Hands
 
-# The Blessings of Pure Hands
+## 1. Brief
 
-## 1. Project Overview
-
-**Project title:** The Blessings of Pure Hands  
-**Format:** AI-generated heritage short film  
-**Language:** Amharic  
-**Duration:** 85 seconds  
-**Aspect ratios:** 9:16 (vertical) and 16:9 (horizontal)
-
-The film tells an emotional story about the relationship between an Ethiopian father and his daughter. It explores the importance of parental blessings, respect, love, family relationships, and the values passed from one generation to another.
-
-The story begins with a young daughter washing her father's feet and receiving his blessing. As time passes, the father dies, but his words and blessings continue to guide his daughter throughout her life.
-
-## 2. Creative Vision and Purpose
-
-The main purpose of this film is to communicate the emotional and cultural importance of a parent's blessing in Ethiopian family life.
-
-I chose this story because parents play an important role in passing values, wisdom, and traditions to their children. A parent's blessing can remain meaningful even after that parent is no longer alive.
-
-I wanted the film to feel emotional, peaceful, respectful, and culturally meaningful.
-
-## 3. Intended Audience
-
-The intended audience is people who appreciate Ethiopian culture, family traditions, and stories about relationships between parents and children.
-
-The film may especially connect with:
-- Ethiopian audiences familiar with the cultural importance of parental blessings.
-- Young adults who value family relationships and cultural heritage.
-- People who have experienced the loss of a parent or received meaningful advice from a parent.
-
-The film is designed to communicate its message through visual storytelling and Amharic narration, supported by English subtitles.
-
-## 4. Story and Narrative Decisions
-
-The film follows a simple beginning, middle, and ending structure.
-
-**Beginning:** A young daughter washes her father's feet. Her father gives her a blessing. This introduces the cultural and emotional foundation of the story.
-
-**Middle:** Time passes, and the father is no longer alive. The story communicates the emotional impact of losing a parent.
-
-**Ending:** The adult daughter remembers her father and holds his photograph. His words continue to guide her life.
-
-I chose this structure because it connects a childhood memory with adult life and shows how family values can remain with someone across generations.
-
-## 5. Visual and Audio Design Decisions
-
-### Visual style
-
-I chose a cinematic visual style with warm lighting and emotional close-up and medium shots.
-
-The visual approach aims to:
-- Show the emotional connection between the father and daughter.
-- Communicate warmth, love, and respect.
-- Maintain a consistent appearance for the characters across scenes.
-- Use visual storytelling to support the narration.
-
-### Narration
-
-The film uses Amharic narration to preserve the cultural and emotional meaning of the story. English translations are included as subtitles to make the film accessible to a wider audience.
-
-### Music
-
-The music is intended to create a warm, emotional atmosphere without distracting from the narration. The background music should remain quieter than the spoken words.
-
-## ## 6. Audience Testing: Radio Cut
-
-The radio cut was shared with three people from the intended audience to evaluate the story before developing the visual scenes.
-
-### Audience Feedback
-
-All three participants said they liked the story and could personally relate to its message. They connected with the relationship between the father and daughter and the cultural importance of a parent's blessing.
-
-Their main suggestion was to improve some of the narration words so that the emotions would be communicated more strongly and naturally.
-
-| Feedback area | Audience response |
+| | |
 |---|---|
-| Story and message | All three participants liked the story. |
-| Cultural connection | All three said they could relate to the story. |
-| Emotional impact | They suggested using more emotionally expressive words. |
-| Suggested improvement | Revise some narration wording to make the emotions stronger. |
+| **Logline** | A daughter who once washed her father's feet carries his spoken blessing through his death and into her adult life. |
+| **Format** | 81 s heritage short, 9:16 (phone feeds) and 16:9 (YouTube), Amharic narration, English subtitles, original score, AI end card |
+| **Who watches** | Ethiopians at home and in the diaspora who grew up with parental blessings (*mirkat*); young adults who value family heritage; anyone who has lost a parent |
+| **Where** | On a phone, mostly vertical, often shared in family Telegram/WhatsApp groups. Sound may be off, so the subtitles must carry the story alone |
+| **Intent** | At the end, the viewer should feel that a parent's blessing doesn't end with the parent, and want to call or remember their own father or mother |
+| **Define** | How might we help young Ethiopians feel the weight of a parent's *mirkat* in 80 seconds, without a funeral scene or a sermon? |
 
-### Design Decisions Based on Feedback
+## 2. Creative vision
 
-Based on the audience feedback, I decided to review the Amharic narration and improve selected words and expressions to make the emotional moments more powerful.
+The film is about the relationship between an Ethiopian father and his daughter, and about how values pass between generations through a parent's blessing. It should feel emotional, peaceful, respectful and culturally specific rather than generic.
 
-I will focus especially on the father's blessing, the daughter's memories, and the ending. I want the narration to sound natural, heartfelt, and culturally meaningful while preserving the original message of the story.
+**Structure (three beats):**
+- **Beginning, the ritual:** a young daughter washes her father's feet and he blesses her. This sets up the custom and the bond.
+- **Middle, the loss:** years pass and the father dies. Shown as an empty landscape at dawn, never as a funeral.
+- **End, the fulfilment:** the grown daughter lives the life he wished for her, and he rejoices from heaven.
 
-This feedback helped me understand that a meaningful story also needs carefully chosen words to communicate its emotions effectively.
+**Motifs:**
+- the father's hand on her head (shot 2), echoed by the light on her face (shots 5–6);
+- warm water and morning light: purity, then renewal.
 
-## 7. Visual Consistency and Character Design
+**Look:** warm 35 mm film still, soft window light, earth tones with amber highlights, Ethiopian highland home, white cotton with a green-yellow-red tibeb border on the daughter at both ages, the visual thread that says "same person". The style block in `storyboard.json` is attached to every prompt.
 
-A key design challenge is maintaining consistent character appearances throughout the film, especially as the daughter changes from a child into an adult.
+**Sound:**
+- Amharic narration in a warm, unhurried, close voice, as a grown daughter remembering.
+- Under it, a sparse krar-like score in the tezeta mode, the mode of Ethiopian nostalgia songs. It opens up at the time jump, is fullest at the fulfilment, and resolves on the tonic under the end card.
 
-The character and style references will guide the generation of the keyframes and moving shots.
+## 3. Shot list: every shot has a reason
 
-The goal is to make the scenes feel as though they belong to one continuous story rather than separate AI-generated images.
+| Shot | Size / move | Reason (also in `storyboard.json`) | Narration (English subtitle) |
+|---|---|---|---|
+| 1 | insert, push in | Opens on the ritual itself, hands and water only: the act of service that earns the blessing, before any face | As a child, washing my father's feet, my heart would fill with so many blessings. |
+| 2 | medium, pull out | Father and daughter in one frame; the hand on the head is the film's motif | 'May God bless you, may He go before you on your path, may He raise you in wisdom and understanding,' he would say. |
+| 3 | close-up, push in | The child's face is where the words land: the seed the rest of the film grows from | Words from a pure heart were sown in me like a seed, and they grew. |
+| 4 | wide establishing, pan right | An empty landscape and an empty chair carry the time jump and the death without a funeral | Many years passed. My father went home to his Creator, but his blessing stayed with me. |
+| 5 | medium, push in | The blessing fulfilled: the same girl, grown, standing in the light he wished for her | The peace, wisdom and honour he wished for me came true in my life, one by one. |
+| 6 | close-up, tilt up | The emotional peak: gratitude, mirroring the child's close-up in shot 3 | In every success of mine, I remember my father's pure heart. |
+| 7 | extreme wide, tilt down | Moves to the father's point of view; a luminous sky instead of a literal heaven keeps it reverent for any faith | And when my father looks on my life from heaven, his heart fills with joy. |
+| 8 | medium close-up, pull out | Closes the circle on the father's face: the joy of the one who gave the blessing | Seeing his daughter live by his blessing, he rejoices. |
+| end card | 3.5 s | Honest labelling: Made with AI, sources, fictional characters | — |
 
-## 8. Final Audience Testing
+## 4. User test 1: the radio cut (narration + placeholder music, black screen)
 
-The near-final film will also be shown to at least three intended audience members.
+**When / who:** before the narration revision of 25 November 2026 (commit `2afb02c`). Three people from the intended audience heard the radio cut and said what they felt and what they would change. The notes below are what was recorded at the time.
 
-Their feedback will help evaluate:
-- Whether the final film communicates the intended message.
-- Whether the characters and scenes feel visually consistent.
-- Whether the subtitles are readable.
-- Whether the music supports the emotional atmosphere.
-- Whether the ending feels meaningful.
+| Feedback area | What they said |
+|---|---|
+| Story and message | All three liked the story. |
+| Cultural connection | All three said they could relate to it personally: the father–daughter bond and the meaning of a parent's blessing. |
+| Emotional impact | The words were not yet strong enough. They asked for more emotionally expressive wording. |
+| Suggested improvement | Revise some narration lines so the emotion comes through more strongly and naturally. |
 
-**Final audience feedback:** [Add feedback after testing.]
+**What changed because of it** (commit `2afb02c`, "Update narration text in storyboard.json", 25 Nov):
 
-**Final improvements:** [Describe changes made after testing.]
+| Shot | Before the test | After the test | Intent of the edit (our reading) |
+|---|---|---|---|
+| 1 | …ልቡ በንጹህ ምርቃት ይሞላ ነበር ("*his* heart would fill with pure blessings") | …**ልቤ በብዙ** ምርቃት ይሞላ ነበር ("*my* heart would fill with so many blessings") | The blessing is felt by the daughter; first person makes it hers |
+| 2 | መንገድሽ የተከፈተ፣ ልብሽም የተረጋጋ ይሁን ("may your path be open and your heart at peace") | **በመንገድሽ እግዜብሄር ይቅደምልሽ፣ በጥበብ እና በማስተዋል ያሳድግሽ** ("may God go before you on your path, may He raise you in wisdom and understanding") | Closer to the words a father actually says, rather than a paraphrase |
+| 3 | በንጹህ ልብ የወጣ ቃል … ተተክሎ አደገ ("a word… was planted") | ከንጹህ ልብ የወጡ **ቃላቶች** … **ተዘርተው** አደገ ("words… were sown") | Sowing a seed is the stronger image, and it sets up the harvest in shot 5 |
+| 7 | ልቡ በደስታ **ተሞላ** (past: "was filled") | ልቡ በደስታ **ይሞላል** (present: "fills") | The father is still watching: the blessing is alive, not finished |
+| 8 | …እግዚአብሔርን ከልብ አመሰገነ ("he thanked God from his heart") | …**ይደሰታል** ("he rejoices") | Ends on the father's joy, which is the feeling the film should leave |
 
-## 9. Reflection
+The English subtitles were then rewritten to match the revised Amharic. The earlier versions had drifted ("my heart would fill with pure alot of blessings", "his heart will fill with joy").
 
-This project demonstrates how AI tools can support cultural storytelling and creative filmmaking.
+## 5. What production taught us (changes to the storyboard after test 1)
 
-One important design consideration was preserving the emotional and cultural meaning of the story rather than focusing only on visual quality.
+These were not audience feedback; they came from looking at the generated material. Details and evidence are in EXPERIMENTS.md.
+- **Characters looked Mediterranean, not Ethiopian.** The descriptions now name skin tone, features, hair and the tibeb border (E1). This mattered most for this audience: the people in the film have to look like their own families.
+- **The child is never conditioned on an adult's image, and vice versa** (E2). Continuity across the 17-year jump comes from the shared description and the tibeb border, which appears at both ages.
+- **Shot 1 became an insert of hands and water** (E4). The film now opens on the ritual before any face, which test 2 should confirm or reject.
+- **The measured narration set the cut** (E11). Shot 2, the blessing, got the 11.5 s it needs, so the most important line is never rushed.
+- **Ducking from the brief beat my guess** (E8): the voice stays clear without the music vanishing.
 
-The project also highlights the importance of human judgment. AI-generated images, narration, and music need to be reviewed and refined to ensure that they support the intended message.
+## 6. User test 2: the near-final cut
 
-My overall goal is to create a short film that reminds viewers that a parent's love, wisdom, and blessings can remain part of a child's life across generations.
+> **Status: to run before submission.** Show `outputs/final/film.vertical.mp4` on a phone to at least three people from the audience above, in person or on Slack. Ask the questions below. Then write their answers here and record any storyboard change as a commit. Leave this section marked pending rather than filling it from memory.
+
+**Questions:**
+1. In one sentence, what is the film about? (Checks that the story lands without explanation.)
+2. What did you feel at the end? (Compare with the intent: "a blessing doesn't end with the parent".)
+3. Did the girl and the woman read as the same person? Did the father look the same in shots 2 and 8?
+4. Native speakers: was any Amharic word mispronounced or unnatural? Which shot?
+5. With sound off: could you follow it from the subtitles alone?
+6. Was the music ever too loud or distracting under the voice?
+7. Does opening on the hands (shot 1) work, or would you rather see her face first?
+
+| Person (role, not name) | Watched on | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 |
+|---|---|---|---|---|---|---|---|---|
+| Viewer 1 | | | | | | | | |
+| Viewer 2 | | | | | | | | |
+| Viewer 3 | | | | | | | | |
+
+**What changed because of it:** _(storyboard edits, with commit ids; or "nothing, because…")_
+
+## 7. Reflection
+
+What mattered most was keeping the story's emotional and cultural meaning, not image quality alone. Every generated element went through human judgement: the narration through native-speaker testers, the faces through a check that they look like the people this film is for, and the music through a measurement and a listen under the voice. The intended feeling is simple: a parent's love, wisdom and blessing stay with a child across generations.

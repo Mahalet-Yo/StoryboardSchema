@@ -1,0 +1,45 @@
+# Runs on every push and pull request. No secrets are needed: every check is offline.
+# Model calls are never made in CI; they need keys and spend free-tier quota.
+name: ci
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: lint, contract, tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: pip install -r requirements.txt ruff
+      - name: Lint
+        run: ruff check pipeline tests
+      - name: Validate storyboard.json against the schema and cross-checks
+        run: python -m pipeline validate
+      - name: Tests (cache, retries, quota handling, timeline, subtitles, render, secrets scan)
+        run: python -m pytest -q
+
+  docker:
+    name: docker image builds and validates
+    runs-on: ubuntu-latest
+    needs: checks
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: docker build -t heritage-short .
+      - name: Validate inside the image
+        run: docker run --rm heritage-short validate
+      - name: Tests inside the image (system FFmpeg path)
+        run: docker run --rm --entrypoint python heritage-short -m pytest -q

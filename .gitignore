@@ -3,3 +3,13 @@
 __pycache__/
 *.pyc
 .DS_Store
+*.tmp
+# intermediate audio, rebuilt from the cached stems in seconds
+outputs/audio/narration_raw.wav
+outputs/audio/summed.wav
+outputs/audio/music_stem.wav
+outputs/final/concat.*.txt
+# Deterministic local renders: rebuilt by `make film` with no model calls (see README, "Clean clone").
+outputs/clips/*.mp4
+outputs/audio/*.wav
+outputs/final/endcard.*.mp4

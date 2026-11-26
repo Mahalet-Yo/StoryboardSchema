@@ -1,0 +1,25 @@
+{
+  "films": [
+    {
+      "file": "outputs/final/film.vertical.mp4",
+      "duration_s": 81.25,
+      "integrated_lufs": -14.4,
+      "true_peak_dbtp": -1.5
+    },
+    {
+      "file": "outputs/final/film.horizontal.mp4",
+      "duration_s": 81.25,
+      "integrated_lufs": -14.4,
+      "true_peak_dbtp": -1.5
+    }
+  ],
+  "checks": {
+    "duration_60_90": true,
+    "loudness_within_1lu": true,
+    "true_peak_ok": true,
+    "both_aspects": true,
+    "end_card": true,
+    "subtitles": true
+  },
+  "passed": true
+}
