@@ -1,12 +1,12 @@
 {
-  "input_hash": "e6604301a1ed2384112f12b57dc52c3296c5a65a9f09a7669adb9c60fb5d4d69",
-  "output_hash": "bd35b52fb06e7f42fc6acb4d63005971513f19a75500ebb6a157aa8ee4bf04b0",
-  "run_id": "20261126T200022-ea16",
-  "created": "2026-11-26T17:02:00Z",
+  "input_hash": "3c31c3dd9baa45b9d27e7ae5feff39db75219d4f6ab4238d0d02a15e5475143e",
+  "output_hash": "b4fb989d8196e824fde22233865497cb020426b29d2711bc1cb334ad618a32ee",
+  "run_id": "20261126T230056-86dd",
+  "created": "2026-11-26T20:08:16Z",
   "inputs": {
-    "keyframe": "2efab9592bf370eb178fa458a10f96cbc389cb6d9bc06b192c09d82eb9e01df2",
+    "keyframe": "855de306ae3306ef6c1c0618747a4212874e15e957e2dee8e7f518f39eb1b856",
     "move": "push_in",
-    "duration": 9.125,
+    "duration": 11.0417,
     "aspect": "16:9",
     "fps": 24,
     "zoom": 0.1,

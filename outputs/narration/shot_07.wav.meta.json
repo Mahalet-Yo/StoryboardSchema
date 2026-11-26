@@ -1,14 +1,14 @@
 {
-  "input_hash": "b02aa6e83b8093580bdf2d1a4d20162cd680ad0716b530843c5ff02cdcd61206",
-  "output_hash": "7a004e581ad95d23d1fc91782a9b6a127283f3f1c5c0971ddd2019da9af6526c",
-  "run_id": "20261126T194940-411e",
-  "created": "2026-11-26T16:51:06Z",
+  "input_hash": "905ffa6b5905bb77f8225bb5f1598ef4a68df7927b93f79b21b3a3664586f81d",
+  "output_hash": "0c76b43e37d0bea0be8a70ea01ccbe9dfab521d817238c38a180cc2498b9a53e",
+  "run_id": "20261126T230056-86dd",
+  "created": "2026-11-26T20:02:10Z",
   "inputs": {
     "text": "ከሰማይም አባቴ ሕይወቴን ሲያይ፣ ልቡ በደስታ ይሞላል።",
     "voice": "Kore",
     "style": "a grown daughter remembering her late father: warm, tender, unhurried, quiet reverence, close to the microphone",
-    "take": 1
+    "take": 2
   },
-  "model": "gemini-3.8-flash-lite-tts",
-  "speech_s": 5.4
+  "model": "gemini-3.8-flash-tts",
+  "speech_s": 5.42
 }

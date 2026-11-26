@@ -6,79 +6,79 @@
       "start": 0.0,
       "duration": 9.0,
       "speech_start": 0.7,
-      "speech_s": 5.88,
+      "speech_s": 7.12,
       "stretched": false,
       "music_cue": "memory"
     },
     {
       "shot_id": "shot_02",
       "start": 9.0,
-      "duration": 11.5,
+      "duration": 10.5,
       "speech_start": 9.7,
-      "speech_s": 9.7,
+      "speech_s": 8.7,
       "stretched": true,
       "music_cue": "memory"
     },
     {
       "shot_id": "shot_03",
-      "start": 20.5,
+      "start": 19.5,
       "duration": 9.0,
-      "speech_start": 21.2,
-      "speech_s": 5.82,
+      "speech_start": 20.2,
+      "speech_s": 5.43,
       "stretched": false,
       "music_cue": "memory"
     },
     {
       "shot_id": "shot_04",
-      "start": 29.5,
-      "duration": 10.125,
-      "speech_start": 30.2,
-      "speech_s": 8.32,
+      "start": 28.5,
+      "duration": 10.5,
+      "speech_start": 29.2,
+      "speech_s": 8.68,
       "stretched": true,
       "music_cue": "time_passes"
     },
     {
       "shot_id": "shot_05",
-      "start": 39.625,
-      "duration": 9.125,
-      "speech_start": 40.325,
-      "speech_s": 7.29,
+      "start": 39.0,
+      "duration": 11.0417,
+      "speech_start": 39.7,
+      "speech_s": 9.23,
       "stretched": true,
       "music_cue": "fulfilment"
     },
     {
       "shot_id": "shot_06",
-      "start": 48.75,
+      "start": 50.0417,
       "duration": 9.0,
-      "speech_start": 49.45,
-      "speech_s": 4.62,
+      "speech_start": 50.7417,
+      "speech_s": 5.01,
       "stretched": false,
       "music_cue": "fulfilment"
     },
     {
       "shot_id": "shot_07",
-      "start": 57.75,
+      "start": 59.0417,
       "duration": 10.0,
-      "speech_start": 58.45,
-      "speech_s": 5.4,
+      "speech_start": 59.7417,
+      "speech_s": 5.42,
       "stretched": false,
       "music_cue": "fulfilment"
     },
     {
       "shot_id": "shot_08",
-      "start": 67.75,
+      "start": 69.0417,
       "duration": 10.0,
-      "speech_start": 68.45,
-      "speech_s": 3.73,
+      "speech_start": 69.7417,
+      "speech_s": 4.25,
       "stretched": false,
       "music_cue": "resolution"
     }
   ],
   "end_card": {
-    "start": 77.75,
+    "start": 79.0417,
     "duration": 3.5
   },
-  "total": 81.25,
+  "total": 82.5417,
   "cues": [
     {
       "id": "memory",
@@ -90,19 +90,19 @@
       "id": "time_passes",
       "from_shot": "shot_04",
       "intent": "pad opens up, the loss and the years",
-      "start": 29.5
+      "start": 28.5
     },
     {
       "id": "fulfilment",
       "from_shot": "shot_05",
       "intent": "fullest texture: the blessing come true",
-      "start": 39.625
+      "start": 39.0
     },
     {
       "id": "resolution",
       "from_shot": "shot_08",
       "intent": "thin back to krar and resolve on the tonic over the end card",
-      "start": 67.75
+      "start": 69.0417
     }
   ]
 }

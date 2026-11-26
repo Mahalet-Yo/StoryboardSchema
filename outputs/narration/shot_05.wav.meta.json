@@ -1,14 +1,14 @@
 {
-  "input_hash": "a4ebfd8c12ad42f88fa51aa9226430b6af04a7d55af2150d611eb6e13f9f9a69",
-  "output_hash": "360d7bcbe64873b3dd3cb116875afce01a29218fa0917e1323d1a4a7ae0d93d1",
-  "run_id": "20261126T194940-411e",
-  "created": "2026-11-26T16:50:03Z",
+  "input_hash": "feee5f3bb754a103ac32de45e0ea30921f8426f5da90212f608c676fa1173658",
+  "output_hash": "7e0c090aab7b7abce39ab812beaac9a6b5198679ed67f0c0af2b96d2f70244da",
+  "run_id": "20261126T230056-86dd",
+  "created": "2026-11-26T20:01:29Z",
   "inputs": {
-    "text": "የተመኘልኝ ሰላም፣ ጥበብ እና ክብር በሕይወቴ አንድ በአንድ ተፈጸሙ።",
+    "text": "ዛሬ የሶፍትዌር መሐንዲስ ነኝ፤ የተመኘልኝ ሰላም፣ ጥበብ እና ክብር በሕይወቴ አንድ በአንድ ተፈጸሙ።",
     "voice": "Kore",
     "style": "a grown daughter remembering her late father: warm, tender, unhurried, quiet reverence, close to the microphone",
-    "take": 1
+    "take": 2
   },
-  "model": "gemini-3.8-flash-lite-tts",
-  "speech_s": 7.29
+  "model": "gemini-3.8-flash-tts",
+  "speech_s": 9.23
 }

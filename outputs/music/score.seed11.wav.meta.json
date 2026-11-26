@@ -1,14 +1,14 @@
 {
-  "input_hash": "32ecb4dffdd2210fb721024b382b42c27aff67fdff36a8f0a5d9127f2e2f1e8d",
-  "output_hash": "1f1fe902851325a6b2cb38477ebd3599c8503dc6eb7dd38be7ebb183df010eb9",
-  "run_id": "20261126T200022-ea16",
-  "created": "2026-11-26T17:00:35Z",
+  "input_hash": "d2dc58444d9ee28190a05a86b8602e2e2d6b53d0dad415e7d5892874d86b73be",
+  "output_hash": "950585d65c74e511a1822226077d8256115ec5540277ca03978fa395009f04b5",
+  "run_id": "20261126T230056-86dd",
+  "created": "2026-11-26T20:06:49Z",
   "inputs": {
     "caption": "slow reverent instrumental film score, Ethiopian krar plucks in a tezeta mode, warm low drone, soft string pad, tender and nostalgic, sparse, no drums, no vocals",
     "bpm": 66,
     "key": "C tezeta (pentatonic)",
     "seed": 11,
-    "length": 81.25,
+    "length": 82.54,
     "cues": [
       [
         "memory",
@@ -16,15 +16,15 @@
       ],
       [
         "time_passes",
-        29.5
+        28.5
       ],
       [
         "fulfilment",
-        39.625
+        39.0
       ],
       [
         "resolution",
-        67.75
+        69.0417
       ]
     ],
     "provider": "ace-step-space"

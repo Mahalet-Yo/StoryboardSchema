@@ -2,19 +2,19 @@
   {
     "seed": 11,
     "file": "outputs/music/score.seed11.wav",
-    "voice_band_share": 0.0953,
+    "voice_band_share": 0.095,
     "selected": false
   },
   {
     "seed": 23,
     "file": "outputs/music/score.seed23.wav",
-    "voice_band_share": 0.0923,
+    "voice_band_share": 0.0889,
     "selected": true
   },
   {
     "seed": 42,
     "file": "outputs/music/score.seed42.wav",
-    "voice_band_share": 0.0943,
+    "voice_band_share": 0.0906,
     "selected": false
   }
 ]
