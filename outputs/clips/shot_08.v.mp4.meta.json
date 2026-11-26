@@ -1,0 +1,17 @@
+{
+  "input_hash": "cfa2206ce3c80c2b0a477d109bbfbebeefd7a91cf257a33eb69937c789aa2f59",
+  "output_hash": "e86093789d3d398e1a8e6cc64a3d39d583606601bbd25501222000856dc6a457",
+  "run_id": "20261126T202007-6196",
+  "created": "2026-11-26T17:20:36Z",
+  "inputs": {
+    "keyframe": "81e4edeca418281315213107df2d97a5ab5e430634a9347875448200a1b4901b",
+    "move": "pull_out",
+    "duration": 10.0,
+    "aspect": "9:16",
+    "fps": 24,
+    "zoom": 0.1,
+    "oversample": 1.5,
+    "provider": "kenburns"
+  },
+  "provider": "kenburns"
+}

@@ -1,0 +1,19 @@
+{
+  "input_hash": "7090fdf057c3191de9840932237f5e9f998ae1a5299519b1472cbe298ab63ae8",
+  "output_hash": "9b1d844204d892dbece3bc8344e5abf5e4a2507b16bcaf02692bf4cbc3cd8928",
+  "run_id": "20261126T202612-a874",
+  "created": "2026-11-26T17:27:14Z",
+  "inputs": {
+    "aspect": "9:16",
+    "clips": [
+      "outputs/clips/shot_01.v.mp4",
+      "outputs/clips/shot_02.v.mp4",
+      "outputs/clips/shot_03.v.mp4",
+      "outputs/clips/shot_04.v.mp4",
+      "outputs/clips/shot_05.v.mp4",
+      "outputs/clips/shot_06.v.mp4",
+      "outputs/clips/shot_07.v.mp4",
+      "outputs/clips/shot_08.v.mp4"
+    ]
+  }
+}
