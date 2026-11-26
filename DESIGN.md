@@ -116,7 +116,9 @@ v2 changes three things. Each answers something the audience or the brief raised
 
 **Result (measured):** all 8 lines re-voiced with full Flash TTS (one per-minute 429 retried). 19 images, 6 of them flagged by the output filter and reseeded automatically. The film is 82.54 s, −14.3 LUFS, −1.5 dBTP, and QC passed in both ratios.
 
-**Known flaw:** the style block now describes the living room, so that interior leaks into shots 7 and 8, the sky and the father in heaven. The fix is to move the home wording out of the style block and into the interior shots. It was not re-run before the deadline because the daily image allowance was nearly spent.
+**Known flaw, half fixed:** the style block describes the living room, so that interior leaked into shots 7 and 8 (the sky and the father in heaven). A new per-shot `style_override` lets a shot replace the style block.
+- **Shot 7** now uses v1's sky prompt and style, so its v1 keyframe is a real cache hit, restored from the `v1` tag with 0 model calls.
+- **Shot 8** still shows picture frames behind the father. Its fix needs 2 image calls, and Cloudflare's daily allowance ran out mid-attempt (FAILURES F12). It is the first thing to regenerate after the reset.
 
 ## 8. Reflection
 
