@@ -69,3 +69,8 @@ What broke, what I tried, and what fixed it or worked around it, in the order it
 ## F9. No FFmpeg and no pip on the machine
 - **What broke:** `which ffmpeg` found nothing, the system Python had no pip, and installing system packages needs sudo.
 - **Fixed:** a project virtualenv, and `imageio-ffmpeg`, which ships a static FFmpeg 9 build. I checked that it includes the four filters the pipeline depends on (`ass`, `sidechaincompress`, `loudnorm`, `zoompan`); `make smoke` re-checks them. `common.ffmpeg_exe()` prefers a system FFmpeg when there is one, which is what the Docker image uses.
+
+## F10. Gemini 3.8 Flash overloaded during the language experiment
+- **What broke:** translating for E13, `gemini-3.8-flash` answered `503 UNAVAILABLE: This model is currently experiencing high demand` four times, then timed out three times at 90 s. `gemini-3.5-flash` returned 503 too (`runs.jsonl`, `E13:translate:*`, from 17:47Z).
+- **Tried:** the retry loop did its job (backoff, 4 attempts), but a demand spike outlasts any sensible backoff.
+- **Fixed:** the tool now walks a model chain (3.8 Flash → 3.5 Flash → 3.1 Flash-Lite) with 2 attempts each and a 45 s timeout, and records which model translated (`translated_by`). Flash-Lite translated both lines. This may also explain the Amharic leaking into the Tigrinya (E13): a lighter model did the translation.
