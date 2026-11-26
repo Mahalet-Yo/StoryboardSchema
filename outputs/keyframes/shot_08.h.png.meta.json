@@ -1,0 +1,22 @@
+{
+  "input_hash": "ba8c919d1ea1303e48678b5ba998a01366c0cb387b26bb01e347041303e959f7",
+  "output_hash": "b98b4fe8b0563833319fb5b17114f17e8488b8cbfdc5dc41b70561fe2ab230ba",
+  "run_id": "20261126T195500-384b",
+  "created": "2026-11-26T16:58:27Z",
+  "inputs": {
+    "prompt": "The same scene, same people, same light and same moment as the last reference image, recomposed as a wide frame. medium close-up of the father bathed in radiant, peaceful golden light against soft clouds, looking down with a joyful, thankful smile. Characters (match the reference images exactly): father = a kind Habesha Ethiopian man in his late forties with dark brown skin, East African features, short greying tightly curled hair and a short grey beard, warm brown eyes, wearing a white cotton gabi shawl over a simple shirt. horizontal 16:9 widescreen composition. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, Ethiopian highland home, subject centred in frame, painterly but realistic, no text, no lettering",
+    "size": [
+      1344,
+      768
+    ],
+    "seed": 108,
+    "steps": 4,
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "refs": [
+      "213a7cb684165685f1633c3b972020b075f4ca0b3cfb9790f200032263f487fe",
+      "48dff2944ef2eb0cbde2aad2565285cc9f2979d4aed931d5d440d7dc90bfd1bf"
+    ],
+    "ref_max_px": 496
+  },
+  "seed_used": 108
+}

@@ -1,0 +1,108 @@
+{
+  "fps": 24,
+  "shots": [
+    {
+      "shot_id": "shot_01",
+      "start": 0.0,
+      "duration": 9.0,
+      "speech_start": 0.7,
+      "speech_s": 5.88,
+      "stretched": false,
+      "music_cue": "memory"
+    },
+    {
+      "shot_id": "shot_02",
+      "start": 9.0,
+      "duration": 11.5,
+      "speech_start": 9.7,
+      "speech_s": 9.7,
+      "stretched": true,
+      "music_cue": "memory"
+    },
+    {
+      "shot_id": "shot_03",
+      "start": 20.5,
+      "duration": 9.0,
+      "speech_start": 21.2,
+      "speech_s": 5.82,
+      "stretched": false,
+      "music_cue": "memory"
+    },
+    {
+      "shot_id": "shot_04",
+      "start": 29.5,
+      "duration": 10.125,
+      "speech_start": 30.2,
+      "speech_s": 8.32,
+      "stretched": true,
+      "music_cue": "time_passes"
+    },
+    {
+      "shot_id": "shot_05",
+      "start": 39.625,
+      "duration": 9.125,
+      "speech_start": 40.325,
+      "speech_s": 7.29,
+      "stretched": true,
+      "music_cue": "fulfilment"
+    },
+    {
+      "shot_id": "shot_06",
+      "start": 48.75,
+      "duration": 9.0,
+      "speech_start": 49.45,
+      "speech_s": 4.62,
+      "stretched": false,
+      "music_cue": "fulfilment"
+    },
+    {
+      "shot_id": "shot_07",
+      "start": 57.75,
+      "duration": 10.0,
+      "speech_start": 58.45,
+      "speech_s": 5.4,
+      "stretched": false,
+      "music_cue": "fulfilment"
+    },
+    {
+      "shot_id": "shot_08",
+      "start": 67.75,
+      "duration": 10.0,
+      "speech_start": 68.45,
+      "speech_s": 3.73,
+      "stretched": false,
+      "music_cue": "resolution"
+    }
+  ],
+  "end_card": {
+    "start": 77.75,
+    "duration": 3.5
+  },
+  "total": 81.25,
+  "cues": [
+    {
+      "id": "memory",
+      "from_shot": "shot_01",
+      "intent": "krar alone, very quiet: a remembered room",
+      "start": 0.0
+    },
+    {
+      "id": "time_passes",
+      "from_shot": "shot_04",
+      "intent": "pad opens up, the loss and the years",
+      "start": 29.5
+    },
+    {
+      "id": "fulfilment",
+      "from_shot": "shot_05",
+      "intent": "fullest texture: the blessing come true",
+      "start": 39.625
+    },
+    {
+      "id": "resolution",
+      "from_shot": "shot_08",
+      "intent": "thin back to krar and resolve on the tonic over the end card",
+      "start": 67.75
+    }
+  ]
+}

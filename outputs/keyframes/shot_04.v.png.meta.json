@@ -1,0 +1,19 @@
+{
+  "input_hash": "40865fdb476afd419bad5d25133c2b4b27df01c192d575390cb178ef1ca59eeb",
+  "output_hash": "68e26d85b857be02c1483fb86d66413020b86997a0b58b85360397ba7138512c",
+  "run_id": "20261126T195500-384b",
+  "created": "2026-11-26T16:56:28Z",
+  "inputs": {
+    "prompt": "wide shot of golden sunrise breaking over misty green Ethiopian highland hills, a small house with a corrugated roof and eucalyptus trees in the foreground, empty wooden chair by the doorway, peaceful dawn. vertical 9:16 composition. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, Ethiopian highland home, subject centred in frame, painterly but realistic, no text, no lettering",
+    "size": [
+      768,
+      1344
+    ],
+    "seed": 104,
+    "steps": 4,
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "refs": [],
+    "ref_max_px": 496
+  },
+  "seed_used": 104
+}

@@ -1,0 +1,14 @@
+{
+  "input_hash": "2ff1b4c988fa8d397f4e4557f1cea451fd593e646fe80e5422451257bcca64bc",
+  "output_hash": "5cfa87354208523330ca62bf4fa9a049bfa46e4dc8b419f94a88a4e76822a23d",
+  "run_id": "20261126T194940-411e",
+  "created": "2026-11-26T16:49:50Z",
+  "inputs": {
+    "text": "‘እግዚአብሔር ይባርክሽ፤ በመንገድሽ እግዜብሄር ይቅደምልሽ፣ በጥበብ እና በማስተዋል ያሳድግሽ’ ይለኝ ነበር።",
+    "voice": "Kore",
+    "style": "a grown daughter remembering her late father: warm, tender, unhurried, quiet reverence, close to the microphone",
+    "take": 1
+  },
+  "model": "gemini-3.8-flash-lite-tts",
+  "speech_s": 9.7
+}

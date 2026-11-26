@@ -1,0 +1,14 @@
+{
+  "input_hash": "85edd1494b6a9e71b74790018424fb49e6aa03e25e6ff9fd5948fdf1159066ca",
+  "output_hash": "ce1d17b31455dacd39c3dec920419d5426b7b03258cefbec9d76de179c1d78cc",
+  "run_id": "20261126T194940-411e",
+  "created": "2026-11-26T16:49:58Z",
+  "inputs": {
+    "text": "ብዙ ዓመታት አለፉ፤ አባቴም ወደ ፈጣሪው ሄደ፣ ግን ምርቃቱ አብሮኝ ቆየ።",
+    "voice": "Kore",
+    "style": "a grown daughter remembering her late father: warm, tender, unhurried, quiet reverence, close to the microphone",
+    "take": 1
+  },
+  "model": "gemini-3.8-flash-lite-tts",
+  "speech_s": 8.32
+}
