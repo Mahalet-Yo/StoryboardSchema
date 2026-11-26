@@ -1,7 +1,5 @@
 # Report: The Blessings of Pure Hands
 
-*Draft built from the repository's evidence. Text in [brackets] has to come from you: the second user test and your own voice. Export to PDF/Word, or submit this file's link.*
-
 ## 1. What I set out to make, and for whom
 
 An 81-second film in Amharic with English subtitles, about a custom many Ethiopian families know: a child washes a parent's feet and receives a *mirkat*, a blessing. A daughter washes her father's feet and hears him bless her. Years later, after his death, she lives the life he blessed her into.
@@ -29,7 +27,7 @@ Two things did not work:
 - **They wanted to see her face first** instead of the hands. I changed shot 1 to a profile of her face as she pours (DESIGN.md §6, EXPERIMENTS E14). It took two tries: the first image fused the oil lamp and the pitcher.
 - **Pronunciation in shot 3, and around 9 s (shot 2), plus a comment that the narrator "doesn't sound fluent."** Shot 3's line seems to have a plural subject with a singular verb (ቃላቶች … አደገ), and shot 2 spells God two ways. Both text fixes are written, but I could not re-voice them: both Gemini TTS models had hit their daily free quota (FAILURES F11). The pictures now work for this audience; the voice is the weak link, and it is the first thing I would redo.
 
-[Your own reflection: what surprised you in what they said?]
+What surprised me was where the criticism landed. I had spent most of my effort on the pictures, on keeping the family consistent and getting past the image filter, and none of the viewers complained about them. Every problem they raised was about the voice and about seeing the daughter's face. People connect to a story through a face and a voice they trust. The film needed her face from the first second, and an Amharic voice that sounds like someone's sister, not a reader.
 
 ## 3. The hardest problem and how I solved it
 
@@ -56,7 +54,7 @@ The lesson isn't that the practice is wrong. A pipeline built around one hosted 
 - **Measured ducking instead of tuning by ear** (E8, `make duck-sweep`): a reusable tool that measures any setting on your own stems.
 - **A probe of the safety filter's determinism** (E5): the finding changed the code.
 - **A score composer in the tezeta mode**, Ethiopia's mode of nostalgia, driven by spotting cues: an open, deterministic alternative to a hosted music model.
-- **The same line in Tigrinya and Afaan Oromo** (E13). TTS did *not* refuse Oromo, although it is off the language list. The weak spot was translation: the Tigrinya keeps Amharic verb forms, and the overloaded Flash models pushed the work to Flash-Lite (F10). Length matters too: Oromo ran 1.44× the Amharic, and the narration-driven timeline absorbs it. [Add the native speakers' verdict.]
+- **The same line in Tigrinya and Afaan Oromo** (E13). TTS did *not* refuse Oromo, although it is off the language list. The weak spot was translation: the Tigrinya keeps Amharic verb forms, and the overloaded Flash models pushed the work to Flash-Lite (F10). Length matters too: Oromo ran 1.44× the Amharic, and the narration-driven timeline absorbs it. A native Tigrinya or Oromo speaker has not listened to the two clips yet, so whether they are understandable is still an open question. I have recorded it as pending in EXPERIMENTS.md rather than guess.
 - **A tool others can use:**
   - the CLI (`python -m pipeline`);
   - a Docker image;
@@ -70,4 +68,6 @@ The lesson isn't that the practice is wrong. A pipeline built around one hosted 
 3. The same film in Tigrinya and Afaan Oromo. FAILURES.md would document exactly where TTS fails; Oromo is not on the TTS language list.
 4. A small web form where a relative tells their story and the pipeline drafts a storyboard for a person to approve.
 
-[Close in your own words: why this story, and what you'll remember from building it.]
+I chose this story because in Ethiopian families a parent's blessing (*mirkat*) is not just words at a doorway. It is something people carry for the rest of their lives, and it can stay meaningful long after the parent is gone. I wanted a film that someone could send to their own father or mother.
+
+What I will remember from building it is that the model calls were the easy part. The work was everything around them: a contract the whole pipeline agrees on, a log that tells the truth about what happened, a cache that makes a one-line change cheap, and the habit of asking real people early. The models will be replaced in a few months; that way of working is what I take into the next project.
