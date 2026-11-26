@@ -13,5 +13,3 @@ outputs/final/concat.*.txt
 outputs/clips/*.mp4
 outputs/audio/*.wav
 outputs/final/endcard.*.mp4
-outputs/music/score.seed*.wav
-!outputs/music/score.seed23.wav
