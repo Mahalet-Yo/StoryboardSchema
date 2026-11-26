@@ -1,0 +1,13 @@
+{
+  "input_hash": "9508bf73a1d10f9272599d12c2f73aa495ee78a44a0ef630e26490d342b5fcc5",
+  "output_hash": "d5947ded1f7ed4c30799092584c556c5787bb66c2724283db93f58f19334e182",
+  "run_id": "20261126T205421-ffc0",
+  "created": "2026-11-26T17:57:50Z",
+  "inputs": {
+    "text": "\"Waaqayyo si haa eebbisu; karaa kee hundumaa irratti Waaqayyo si dura haa deemu; hubannaa fi ogeessummaan si haa guddisu\" jedhee natti hime ture.",
+    "voice": "Kore",
+    "style": "a grown daughter remembering her late father: warm, tender, unhurried, quiet reverence, close to the microphone",
+    "lang": "om"
+  },
+  "speech_s": 13.95
+}

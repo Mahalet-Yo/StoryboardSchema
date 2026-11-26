@@ -18,7 +18,18 @@ The pipeline is the real product. One file, `storyboard.json`, drives five stage
 - "Planted" became "sown", setting up the harvest in shot 5.
 - The father in heaven became present tense ("his heart fills with joy"): he is still watching.
 
-**Test 2 (near-final cut).** [Who watched, on what device. What each said to the protocol questions in DESIGN.md §6. Especially: did the girl and the woman read as one person, and did any Amharic word sound wrong? Then name the storyboard change and its commit id, or say why nothing changed.]
+**Test 2 (near-final cut).** Three people from the audience watched the vertical cut on a phone. All three:
+- could say what the film is about ("the relationship, love and respect between an Ethiopian father and daughter");
+- felt "the emotion the girl feels";
+- saw the girl and the woman as one person;
+- could follow the story with the sound off;
+- did not find the music too loud, which confirmed the measured ducking choice by ear.
+
+Two things did not work:
+- **They wanted to see her face first** instead of the hands. I changed shot 1 to a profile of her face as she pours (DESIGN.md §6, EXPERIMENTS E14). It took two tries: the first image fused the oil lamp and the pitcher.
+- **Pronunciation in shot 3, and around 9 s (shot 2), plus a comment that the narrator "doesn't sound fluent."** Shot 3's line seems to have a plural subject with a singular verb (ቃላቶች … አደገ), and shot 2 spells God two ways. Both text fixes are written, but I could not re-voice them: both Gemini TTS models had hit their daily free quota (FAILURES F11). The pictures now work for this audience; the voice is the weak link, and it is the first thing I would redo.
+
+[Your own reflection: what surprised you in what they said?]
 
 ## 3. The hardest problem and how I solved it
 
@@ -45,6 +56,7 @@ The lesson isn't that the practice is wrong. A pipeline built around one hosted 
 - **Measured ducking instead of tuning by ear** (E8, `make duck-sweep`): a reusable tool that measures any setting on your own stems.
 - **A probe of the safety filter's determinism** (E5): the finding changed the code.
 - **A score composer in the tezeta mode**, Ethiopia's mode of nostalgia, driven by spotting cues: an open, deterministic alternative to a hosted music model.
+- **The same line in Tigrinya and Afaan Oromo** (E13). TTS did *not* refuse Oromo, although it is off the language list. The weak spot was translation: the Tigrinya keeps Amharic verb forms, and the overloaded Flash models pushed the work to Flash-Lite (F10). Length matters too: Oromo ran 1.44× the Amharic, and the narration-driven timeline absorbs it. [Add the native speakers' verdict.]
 - **A tool others can use:**
   - the CLI (`python -m pipeline`);
   - a Docker image;

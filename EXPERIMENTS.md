@@ -86,3 +86,30 @@ Each entry has a hypothesis, the one thing changed, the result, and the evidence
 - **Change:** shot 8's 16:9 frame had drifted indoors while the 9:16 was outdoors. Rewrote its prompt to "standing outdoors on a highland hilltop at golden hour…" and ran `make film`.
 - **Result:** run `20261126T202007-6196`: **2 model calls** (shot_08.v, shot_08.h), 2 clips re-rendered, mix and exports rebuilt. 17 images, 8 narration lines and 14 clips cached. Both versions of shot 8 are now outdoors in the same light.
 - **Evidence:** `runs.jsonl` lines with that `run_id`.
+
+## E13. Ceiling: the father's blessing in Tigrinya and Afaan Oromo
+- **Hypothesis:** the same pipeline can narrate the film in Tigrinya and Afaan Oromo by adding a translation step: Gemini text → the same TTS voice and style. Tigrinya, which is on the TTS language list, will work. Afaan Oromo, which is not on the list, will fail or come out garbled.
+- **Change:** `python -m pipeline.tools.lang_test` translates shot 2's Amharic line, voices it with `gemini-3.8-flash-lite-tts` "Kore", and measures it against the Amharic take (9.70 s). One TTS call per language, because of the quota.
+- **Result:**
+
+| | Tigrinya | Afaan Oromo |
+|---|---|---|
+| Translated by | gemini-3.1-flash-lite, after 3.8 Flash and 3.5 Flash returned 503 (F10) | same |
+| TTS | audio returned, −19.9 dBFS RMS | **audio returned too**, −18.1 dBFS RMS, although Oromo is not on the TTS language list |
+| Speech length | 10.12 s, **1.04×** the Amharic: fits the existing 11.5 s shot | 13.95 s, **1.44×**: shot 2 would stretch to ~15.8 s and the film to ~85.5 s, still under 90 |
+| Text | «እግዚአብሔር ይባርክሽ፤ በመንገድሽ እግዚአብሔር ይቅደምልሽ፣ በጥበብን ብልሃትን የዓድለሽ» ይለኒ ነበረ። | "Waaqayyo si haa eebbisu; karaa kee hundumaa irratti Waaqayyo si dura haa deemu; hubannaa fi ogeessummaan si haa guddisu" jedhee natti hime ture. |
+
+  **The hypothesis was half wrong.** TTS did not refuse Oromo. The real weak spot looks like the *translation*. The Tigrinya line keeps Amharic verb forms (ይባርክሽ, ይቅደምልሽ are Amharic; the ending ይለኒ ነበረ is Tigrinya), so it looks like Amharic leaking into a lighter model's Tigrinya. That is a suspicion, not a verdict: neither author is a native Tigrinya or Oromo speaker.
+- **Native-speaker check (pending):** a Tigrinya speaker and an Oromo speaker listen to `outputs/experiments/lang/shot_02.{ti,om}.wav` and answer: (1) Is the text your language, or mixed with Amharic? (2) Is the pronunciation understandable? Where does it break: names, ejectives, long vowels? (3) Would you watch the film in this voice? Record the answers here.
+- **What it shows about the pipeline:** a second language is one new storyboard field per shot plus this translation step. The timeline already absorbs the 1.44× length difference, so the Oromo cut would still be inside 60–90 s.
+- **Evidence:** `outputs/experiments/lang/results.json`, the two WAVs, and the `E13:*` lines in `runs.jsonl`.
+
+## E14. Test 2 asked for her face in shot 1: can the filter-safe framing show it?
+- **Hypothesis:** the output filter reacted to the child, the man's bare feet and touch together (F3), not to the child's face. A profile of the girl pouring, with the father's feet out of frame, will pass and give viewers her face first.
+- **Change:** shot 1 changed from `insert_shot` (no character) to `medium_close_up` with `daughter_child`. The prompt describes her face lit warmly, eyes lowered, pouring from a clay pitcher, with only the basin rim visible. Seed 101 unchanged.
+- **Result:**
+  - The first prompt passed the filter at once, but the model **merged two objects**: "oil lamp glow" plus "pitcher" became a lit lamp she was pouring water from.
+  - The second prompt names "a round brown clay water pitcher", moves the light to "a window off frame" and adds "no lamp, no candle". Correct in both aspect ratios: her face in profile, the pitcher pouring into the basin, and the same braids and tibeb border as the reference.
+  - The hypothesis held: the face itself was never the problem.
+- **Lesson:** a light source named in the prompt becomes an object in the frame. When two small props share a sentence, the model can fuse them. Put light off frame and name each prop once.
+- **Evidence:** runs `20261126T220800-e9a1` (lamp merged) and `20261126T220841-35a3` (fixed), 2 image calls each, every other keyframe cached; `outputs/keyframes/shot_01.v.png.meta.json` has the final prompt.

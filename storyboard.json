@@ -124,11 +124,13 @@
   "shots": [
     {
       "shot_id": "shot_01",
-      "reason": "Opens on the ritual itself, hands and water only: the act of service that earns the blessing, before we see any face.",
+      "reason": "Opens on the daughter's face as she serves, so the audience meets her before the ritual. Changed after test 2: viewers asked to see her face first instead of the hands.",
       "duration_sec": 9,
-      "camera_type": "insert_shot",
-      "characters": [],
-      "keyframe_prompt": "insert shot from above: small hands hold a clay pitcher and pour a thin stream of warm water into a wide metal basin on a woven straw mat, a white cotton dress hem with a green-yellow-red tibeb border at the edge of frame, oil lamp glow, steam rising",
+      "camera_type": "medium_close_up",
+      "characters": [
+        "daughter_child"
+      ],
+      "keyframe_prompt": "medium close-up in profile of the girl kneeling beside a wide metal basin of water on a woven straw mat, holding a round brown clay water pitcher with both hands and pouring a thin stream of water into the basin, eyes lowered with care and humility, her face lit by warm golden light from a window off frame, no lamp, no candle",
       "seed": 101,
       "camera_move": "push_in",
       "motion_prompt": "slow gentle push-in as water pours softly into the basin",

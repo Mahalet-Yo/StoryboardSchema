@@ -1,0 +1,13 @@
+{
+  "input_hash": "0d6c40ae30b859bdde0d9d11a64f90c7d0ffb71a652dd515db50154755076d52",
+  "output_hash": "7b38692d8f1ad68859603c4f6df20e6f24a67ec6ee41d1de1ec56a74e11f4032",
+  "run_id": "20261126T205421-ffc0",
+  "created": "2026-11-26T17:55:35Z",
+  "inputs": {
+    "text": "«እግዚአብሔር ይባርክሽ፤ በመንገድሽ እግዚአብሔር ይቅደምልሽ፣ በጥበብን ብልሃትን የዓድለሽ» ይለኒ ነበረ።",
+    "voice": "Kore",
+    "style": "a grown daughter remembering her late father: warm, tender, unhurried, quiet reverence, close to the microphone",
+    "lang": "ti"
+  },
+  "speech_s": 10.12
+}

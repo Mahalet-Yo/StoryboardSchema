@@ -7,19 +7,24 @@ Real spend: **$0**. Everything ran on free tiers and a CPU laptop (8 cores, 15 G
 <!-- generated:start -->
 | Stage | Provider | Model | OK calls | Failed / retried | Mean latency (s) | Total time (s) | GPU min | List-price equivalent (USD) | Real spend |
 |---|---|---|---|---|---|---|---|---|---|
-| assemble | local | ffmpeg-export | 5 | 0 | 68.0 | 340.1 | 0 (CPU) | 0 (local) | $0 |
+| assemble | local | ffmpeg-export | 7 | 0 | 66.1 | 462.4 | 0 (CPU) | 0 (local) | $0 |
 | assemble | local | ffmpeg-mix | 2 | 0 | 15.9 | 31.8 | 0 (CPU) | 0 (local) | $0 |
 | experiment | cloudflare | @cf/black-forest-labs/flux-2-klein-4b | 1 | 1 | 9.6 | 9.6 | 0 | 0.0018 | $0 |
-| keyframes | cloudflare | @cf/black-forest-labs/flux-2-klein-4b | 28 | 5 | 12.0 | 337.1 | 0 | 0.0467 | $0 |
+| experiment | gemini | gemini-3.1-flash-lite | 2 | 0 | 1.3 | 2.5 | 0 | n/a | $0 |
+| experiment | gemini | gemini-3.5-flash | 0 | 4 | 0.0 | 0.0 | 0 | n/a | $0 |
+| experiment | gemini | gemini-3.8-flash | 0 | 11 | 0.0 | 0.0 | 0 | n/a | $0 |
+| experiment | gemini | gemini-3.8-flash-lite-tts | 2 | 0 | 5.0 | 10.1 | 0 | 0.0036 | $0 |
+| keyframes | cloudflare | @cf/black-forest-labs/flux-2-klein-4b | 32 | 5 | 12.1 | 387.3 | 0 | 0.0539 | $0 |
 | music | hf-space | ACE-Step 1.5 (xl-turbo) | 0 | 1 | 0.0 | 0.0 | 0 | n/a | $0 |
 | music | local | synth-tezeta-v1 | 3 | 0 | 3.8 | 11.3 | 0 (CPU) | 0 (local) | $0 |
-| narration | gemini | gemini-3.8-flash-lite-tts | 8 | 1 | 3.9 | 31.2 | 0 | 0.0076 | $0 |
-| shots | local | ffmpeg-zoompan | 18 | 0 | 7.6 | 136.0 | 0 (CPU) | 0 (local) | $0 |
+| narration | gemini | gemini-3.8-flash-lite-tts | 8 | 2 | 3.9 | 31.2 | 0 | 0.0076 | $0 |
+| narration | gemini | gemini-3.8-flash-tts | 0 | 1 | 0.0 | 0.0 | 0 | n/a | $0 |
+| shots | local | ffmpeg-zoompan | 20 | 0 | 7.5 | 150.0 | 0 (CPU) | 0 (local) | $0 |
 | smoke | cloudflare | @cf/black-forest-labs/flux-2-klein-4b | 1 | 0 | 9.3 | 9.3 | 0 | n/a | $0 |
 | smoke | gemini | gemini-3.5-flash-lite | 1 | 0 | 1.9 | 1.9 | 0 | n/a | $0 |
 | smoke | hf-space | ACE-Step/Ace-Step-v1.5 (reachability) | 1 | 0 | 12.0 | 12.0 | 0 | n/a | $0 |
 
-List-price total for every logged call: **$0.0560**. Real spend: **$0** (free tiers and a CPU laptop).
+List-price total for every logged call: **$0.0669**. Real spend: **$0** (free tiers and a CPU laptop).
 <!-- generated:end -->
 
 ## One clean film, end to end
