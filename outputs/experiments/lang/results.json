@@ -1,0 +1,28 @@
+[
+  {
+    "lang": "ti",
+    "language": "Tigrinya",
+    "shot": "shot_02",
+    "amharic_s": 9.7,
+    "translated_by": "gemini-3.1-flash-lite",
+    "text": "«እግዚአብሔር ይባርክሽ፤ በመንገድሽ እግዚአብሔር ይቅደምልሽ፣ በጥበብን ብልሃትን የዓድለሽ» ይለኒ ነበረ።",
+    "file": "outputs/experiments/lang/shot_02.ti.wav",
+    "speech_s": 10.12,
+    "ratio_to_amharic": 1.04,
+    "rms_db": -19.9,
+    "status": "ok"
+  },
+  {
+    "lang": "om",
+    "language": "Afaan Oromo",
+    "shot": "shot_02",
+    "amharic_s": 9.7,
+    "translated_by": "gemini-3.1-flash-lite",
+    "text": "\"Waaqayyo si haa eebbisu; karaa kee hundumaa irratti Waaqayyo si dura haa deemu; hubannaa fi ogeessummaan si haa guddisu\" jedhee natti hime ture.",
+    "file": "outputs/experiments/lang/shot_02.om.wav",
+    "speech_s": 13.95,
+    "ratio_to_amharic": 1.44,
+    "rms_db": -18.1,
+    "status": "ok"
+  }
+]
