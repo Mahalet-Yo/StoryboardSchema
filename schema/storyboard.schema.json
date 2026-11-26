@@ -1,111 +1,171 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://example.local/schemas/storyboard.schema.json",
-  "title": "ShortFilmStoryboard",
-  "description": "Single contract between storyboard authoring and the 5-stage AI short film pipeline (keyframes, moving shots, music, narration, assembly).",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mahalet-Yo/StoryboardSchema/schema/storyboard.schema.json",
+  "title": "HeritageShortStoryboard",
+  "description": "The single contract between every stage of the pipeline (narration, keyframes, shots, music, assembly). Prompts, seeds, models and mix settings live here, not in code.",
   "type": "object",
   "additionalProperties": false,
-  "required": [
-    "title",
-    "language",
-    "aspect_ratios",
-    "total_duration_sec",
-    "style_reference",
-    "shots"
-  ],
+  "required": ["version", "title", "logline", "language", "subtitle_language", "aspect_ratios", "style_block", "characters", "providers", "music", "mix", "end_card", "shots"],
   "properties": {
-    "title": {
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 160
-    },
-    "language": {
-      "type": "string",
-      "minLength": 2,
-      "maxLength": 16
-    },
+    "version": { "const": 2 },
+    "title": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "logline": { "type": "string", "minLength": 10, "maxLength": 300 },
+    "language": { "type": "string", "pattern": "^[a-z]{2,3}$", "description": "ISO 639 code of the narration language" },
+    "subtitle_language": { "type": "string", "pattern": "^[a-z]{2,3}$" },
     "aspect_ratios": {
-      "type": "array",
-      "minItems": 2,
-      "maxItems": 2,
-      "uniqueItems": true,
-      "items": {
-        "type": "string",
-        "enum": ["9:16", "16:9"]
-      }
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": { "enum": ["9:16", "16:9"] }
     },
-    "total_duration_sec": {
-      "type": "number",
-      "minimum": 55,
-      "maximum": 95
+    "style_block": {
+      "type": "string", "minLength": 20,
+      "description": "Fixed look description appended to every keyframe prompt, so the style never drifts by re-description."
     },
-    "style_reference": {
+    "characters": {
+      "type": "object",
+      "description": "Reference sheet. Each character gets one approved reference image that every keyframe showing them is conditioned on.",
+      "additionalProperties": { "$ref": "#/$defs/Character" }
+    },
+    "providers": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["medium", "cultural_elements", "palette"],
+      "required": ["tts", "image", "motion", "music"],
       "properties": {
-        "medium": { "type": "string", "minLength": 1 },
-        "cultural_elements": { "type": "string", "minLength": 1 },
-        "palette": { "type": "string", "minLength": 1 },
-        "character_sheet_path": { "type": "string" }
+        "tts": {
+          "type": "object", "additionalProperties": false,
+          "required": ["model", "voice", "style"],
+          "properties": {
+            "model": { "type": "string" },
+            "fallback_models": { "type": "array", "items": { "type": "string" } },
+            "voice": { "type": "string" },
+            "style": { "type": "string", "description": "Plain-language performance instruction sent with every line" }
+          }
+        },
+        "image": {
+          "type": "object", "additionalProperties": false,
+          "required": ["model", "steps"],
+          "properties": {
+            "model": { "type": "string" },
+            "steps": { "type": "integer", "minimum": 1, "maximum": 50 },
+            "reference_max_px": { "type": "integer", "minimum": 128, "maximum": 1024 }
+          }
+        },
+        "motion": {
+          "type": "object", "additionalProperties": false,
+          "required": ["provider"],
+          "properties": {
+            "provider": { "enum": ["kenburns"], "description": "kenburns renders a slow pan/zoom locally from the keyframe. Wan 2.2 needs a GPU this project did not have (FAILURES.md F5); a new provider plugs in at pipeline/shots.py:render" },
+            "fps": { "type": "integer", "enum": [24, 25, 30] }
+          }
+        },
+        "music": {
+          "type": "object", "additionalProperties": false,
+          "required": ["provider"],
+          "properties": {
+            "provider": { "enum": ["ace-step-space", "synth"] },
+            "space": { "type": "string" },
+            "infer_steps": { "type": "integer", "minimum": 4, "maximum": 100 }
+          }
+        }
+      }
+    },
+    "music": {
+      "type": "object", "additionalProperties": false,
+      "required": ["caption", "bpm", "candidate_seeds", "selected_seed", "selection_reason", "cues"],
+      "properties": {
+        "caption": { "type": "string", "minLength": 10, "description": "ACE-Step caption: style, mood, instruments, texture. Tempo goes in bpm, not here." },
+        "bpm": { "type": "integer", "minimum": 40, "maximum": 200 },
+        "key": { "type": "string" },
+        "candidate_seeds": { "type": "array", "minItems": 1, "maxItems": 8, "uniqueItems": true, "items": { "type": "integer", "minimum": 0 } },
+        "selected_seed": { "type": "integer", "minimum": 0 },
+        "selection_reason": { "type": "string" },
+        "cues": {
+          "type": "array", "minItems": 1,
+          "description": "Spotting notes: where the music should start, build and resolve.",
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["id", "from_shot", "intent"],
+            "properties": {
+              "id": { "type": "string" },
+              "from_shot": { "type": "string" },
+              "intent": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "mix": {
+      "type": "object", "additionalProperties": false,
+      "required": ["narration_lufs", "music_lufs", "music_gain_db", "duck", "target_lufs", "true_peak_db"],
+      "properties": {
+        "narration_lufs": { "type": "number", "maximum": 0 },
+        "music_lufs": { "type": "number", "maximum": 0 },
+        "music_gain_db": { "type": "number", "minimum": -40, "maximum": 0 },
+        "duck": {
+          "type": "object", "additionalProperties": false,
+          "required": ["threshold", "ratio", "attack_ms", "release_ms"],
+          "properties": {
+            "threshold": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 },
+            "ratio": { "type": "number", "minimum": 1, "maximum": 20 },
+            "attack_ms": { "type": "number", "minimum": 0.01 },
+            "release_ms": { "type": "number", "minimum": 0.01 }
+          }
+        },
+        "target_lufs": { "type": "number", "minimum": -30, "maximum": -5 },
+        "true_peak_db": { "type": "number", "minimum": -9, "maximum": 0 }
+      }
+    },
+    "end_card": {
+      "type": "object", "additionalProperties": false,
+      "required": ["lines", "duration_sec"],
+      "properties": {
+        "lines": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "duration_sec": { "type": "number", "minimum": 2, "maximum": 6 }
       }
     },
     "shots": {
-      "type": "array",
-      "minItems": 6,
-      "maxItems": 15,
-      "items": {
-        "$ref": "#/definitions/Shot"
-      }
+      "type": "array", "minItems": 8, "maxItems": 12,
+      "items": { "$ref": "#/$defs/Shot" }
     }
   },
-  "definitions": {
-    "Shot": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "shot_id",
-        "duration_sec",
-        "camera_type",
-        "character_ref",
-        "keyframe_prompt",
-        "motion_prompt",
-        "narration_am",
-        "narration_en",
-        "music_cue"
-      ],
+  "$defs": {
+    "Character": {
+      "type": "object", "additionalProperties": false,
+      "required": ["description", "sheet_prompt", "seed", "consent"],
       "properties": {
-        "shot_id": {
-          "type": "string",
-          "pattern": "^shot_[0-9]{2,3}$"
-        },
-        "duration_sec": {
-          "type": "number",
-          "minimum": 2,
-          "maximum": 20
-        },
+        "description": { "type": "string", "minLength": 10, "description": "Fixed wording reused in every prompt that shows this character" },
+        "sheet_prompt": { "type": "string", "minLength": 10 },
+        "seed": { "type": "integer", "minimum": 0 },
+        "derived_from": { "type": "string", "description": "Another character whose reference conditions this one (the same girl, grown up)" },
+        "consent": {
+          "type": "object", "additionalProperties": false,
+          "required": ["recorded", "basis"],
+          "properties": {
+            "recorded": { "type": "boolean" },
+            "basis": { "enum": ["fictional", "consent_on_file"] },
+            "note": { "type": "string" }
+          }
+        }
+      }
+    },
+    "Shot": {
+      "type": "object", "additionalProperties": false,
+      "required": ["shot_id", "reason", "duration_sec", "camera_type", "characters", "keyframe_prompt", "seed", "camera_move", "motion_prompt", "narration_am", "narration_en", "music_cue"],
+      "properties": {
+        "shot_id": { "type": "string", "pattern": "^shot_[0-9]{2}$" },
+        "reason": { "type": "string", "minLength": 10, "description": "Why this shot exists, in one sentence" },
+        "duration_sec": { "type": "number", "minimum": 3, "maximum": 15, "description": "Planned length; the timeline stretches it if the measured narration needs more" },
         "camera_type": {
-          "type": "string",
-          "enum": [
-            "extreme_wide",
-            "wide_establishing",
-            "wide_shot",
-            "medium_shot",
-            "medium_close_up",
-            "close_up",
-            "extreme_close_up",
-            "insert_shot",
-            "cutaway",
-            "over_the_shoulder"
-          ]
+          "enum": ["extreme_wide", "wide_establishing", "wide_shot", "medium_shot", "medium_close_up", "close_up", "extreme_close_up", "insert_shot", "cutaway", "over_the_shoulder"]
         },
-        "character_ref": { "type": "string", "minLength": 1 },
+        "characters": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
         "keyframe_prompt": { "type": "string", "minLength": 10 },
-        "motion_prompt": { "type": "string", "minLength": 3 },
+        "seed": { "type": "integer", "minimum": 0 },
+        "camera_move": { "enum": ["push_in", "pull_out", "pan_left", "pan_right", "tilt_up", "tilt_down", "hold"] },
+        "motion_prompt": { "type": "string", "minLength": 3, "description": "Motion and camera only; the keyframe already holds the subject" },
         "narration_am": { "type": "string", "minLength": 1 },
-        "narration_en": { "type": "string", "minLength": 1 },
-        "music_cue": { "type": "string", "minLength": 1 },
-        "seed": { "type": "integer", "minimum": 0 }
+        "narration_en": { "type": "string", "minLength": 1, "description": "English subtitle text" },
+        "narration_take": { "type": "integer", "minimum": 1, "description": "Gemini TTS has no seed; bump the take to ask for a new performance" },
+        "music_cue": { "type": "string" }
       }
     }
   }
