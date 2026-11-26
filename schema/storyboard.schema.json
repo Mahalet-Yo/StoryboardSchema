@@ -159,6 +159,7 @@
         },
         "characters": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
         "keyframe_prompt": { "type": "string", "minLength": 10 },
+        "style_override": { "type": "string", "minLength": 20, "description": "Replaces style_block for this shot only, e.g. an outdoor or sky shot that must not inherit the interior setting" },
         "seed": { "type": "integer", "minimum": 0 },
         "camera_move": { "enum": ["push_in", "pull_out", "pan_left", "pan_right", "tilt_up", "tilt_down", "hold"] },
         "motion_prompt": { "type": "string", "minLength": 3, "description": "Motion and camera only; the keyframe already holds the subject" },
