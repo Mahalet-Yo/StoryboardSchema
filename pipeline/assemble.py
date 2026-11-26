@@ -55,7 +55,7 @@ def build_mix(board: dict, timeline: dict) -> tuple[Path, Path]:
     music = selected_path(board)
     lines = [(s["shot_id"], s["speech_start"]) for s in timeline["shots"]]
     inputs = {"lines": [[sid, start, file_hash(narration_path(sid))] for sid, start in lines],
-              "music": file_hash(music), "mix": mix, "total": total}
+              "music": file_hash(music), "mix": mix, "total": total, "codec_headroom_db": CODEC_HEADROOM_DB}
     digest = compute_hash({"stage": "mix", **inputs})
     master, voice_stem = AUDIO_DIR / "master.wav", AUDIO_DIR / "narration_stem.wav"
     if is_fresh(master, digest) and voice_stem.exists():
@@ -97,9 +97,10 @@ def build_mix(board: dict, timeline: dict) -> tuple[Path, Path]:
             f"[1:a][sc]sidechaincompress=threshold={d['threshold']}:ratio={d['ratio']}:"
             f"attack={d['attack_ms']}:release={d['release_ms']}[ducked];"
             f"[voice][ducked]amix=inputs=2:normalize=0[out]", "-map", "[out]", "-ar", str(SR), str(summed)])
-    m = _loudnorm_measure(summed, mix["target_lufs"], mix["true_peak_db"])
+    tp = mix["true_peak_db"] - CODEC_HEADROOM_DB
+    m = _loudnorm_measure(summed, mix["target_lufs"], tp)
     ffmpeg(["-i", str(summed), "-af",
-            f"loudnorm=I={mix['target_lufs']}:TP={mix['true_peak_db']}:LRA=11:measured_I={m['input_i']}:"
+            f"loudnorm=I={mix['target_lufs']}:TP={tp}:LRA=11:measured_I={m['input_i']}:"
             f"measured_TP={m['input_tp']}:measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}:"
             f"offset={m['target_offset']}:linear=true,aresample={SR}", "-ar", str(SR), str(master)])
     latency = time.perf_counter() - t0
@@ -142,25 +143,32 @@ def _ts(t: float, srt: bool) -> str:
     return f"{int(h)}:{int(m):02d}:{s:05.2f}"
 
 
-def subtitle_events(board: dict, timeline: dict) -> list[tuple[float, float, str]]:
+# Characters per subtitle line. 9:16 is narrow: 34 characters at size 46 keeps every event to two lines.
+WRAP = {"9:16": 34, "16:9": 42}
+# AAC encoding adds inter-sample peaks after the master is normalised (EXPERIMENTS.md E9),
+# so the master aims this far below the storyboard's true-peak ceiling.
+CODEC_HEADROOM_DB = 0.7
+
+
+def subtitle_events(board: dict, timeline: dict, wrap: int = 42) -> list[tuple[float, float, str]]:
     events = []
     by_id = {s["shot_id"]: s for s in board["shots"]}
     for s in timeline["shots"]:
         text = by_id[s["shot_id"]]["narration_en"]
-        chunks = _chunks(text)
+        chunks = _chunks(text, 2 * wrap)
         start, span = s["speech_start"] - 0.1, s["speech_s"] + 0.5
         weights = [len(c) for c in chunks]
         t = start
         for c, w in zip(chunks, weights):
             dur = span * w / sum(weights)
-            events.append((t, t + dur, "\\N".join(textwrap.wrap(c, 42))))
+            events.append((t, t + dur, "\\N".join(textwrap.wrap(c, wrap))))
             t += dur
     return events
 
 
 def write_subtitles(board: dict, timeline: dict) -> dict[str, Path]:
     SUB_DIR.mkdir(parents=True, exist_ok=True)
-    events = subtitle_events(board, timeline)
+    events = subtitle_events(board, timeline, WRAP["16:9"])
     srt = SUB_DIR / "film.en.srt"
     srt.write_text("\n".join(f"{i}\n{_ts(a, True)} --> {_ts(b, True)}\n{t.replace(chr(92) + 'N', chr(10))}\n"
                              for i, (a, b, t) in enumerate(events, 1)), encoding="utf-8")
@@ -168,9 +176,10 @@ def write_subtitles(board: dict, timeline: dict) -> dict[str, Path]:
     for aspect in board["aspect_ratios"]:
         w, h = OUT_SIZE[aspect]
         vertical = aspect == "9:16"
-        size = 58 if vertical else 50
+        events = subtitle_events(board, timeline, WRAP[aspect])
+        size = 46 if vertical else 50
         margin_v = int(h * 0.20) if vertical else 64  # keep clear of phone UI at the bottom of vertical feeds
-        margin_lr = 80 if vertical else 160
+        margin_lr = 60 if vertical else 160
         head = textwrap.dedent(f"""\
             [Script Info]
             ScriptType: v4.00+
