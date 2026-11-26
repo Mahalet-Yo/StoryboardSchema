@@ -45,6 +45,7 @@ docker run --rm --env-file .env -v "$PWD:/app" heritage-short film
 | `make smoke` | one cheap call per provider, logged, before spending real quota |
 | `make costs` | rebuild the measured table in COSTS.md from `runs.jsonl` |
 | `make duck-sweep` | experiment E8: measure ducking settings on the real stems |
+| `make lang-test` | experiment E13: shot 2 translated and voiced in Tigrinya and Afaan Oromo |
 | `make test` | 27 offline tests (also run in CI and inside the Docker image) |
 
 ## Change one shot
@@ -87,7 +88,7 @@ runs.jsonl           one line per model call attempt (model, params, seed, laten
 outputs/             generated media + .meta.json cache records, kept so the run can be inspected
 DESIGN.md            audience, intent, shot reasons, the two user tests and what changed
 ARCHITECTURE.md      stages, contracts, caching, failure handling
-EXPERIMENTS.md       12 hypothesis → change → result entries
+EXPERIMENTS.md       13 hypothesis → change → result entries
 FAILURES.md          what broke, what I tried, what fixed it
 COSTS.md             measured latency per stage, limits hit, list-price equivalents
 ETHICS.md            consent record, licences, labelling plan
