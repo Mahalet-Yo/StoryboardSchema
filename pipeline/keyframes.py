@@ -139,7 +139,7 @@ def shot_prompt(board: dict, shot: dict, aspect: str) -> str:
     if cast:
         parts.append("Characters (match the reference images exactly): " + cast)
     parts.append(framing)
-    parts.append(board["style_block"])
+    parts.append(shot.get("style_override") or board["style_block"])
     return ". ".join(parts)
 
 

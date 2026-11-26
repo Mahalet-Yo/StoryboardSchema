@@ -1,10 +1,10 @@
 {
-  "input_hash": "957d9f14d541653ea460d61cb1f155633d0531d9dfd7b39e81b48c1ae09f8f30",
-  "output_hash": "f40dd50c7dd9c7888401810f064996cfb2897222d1a62c9867580ebc925d8493",
-  "run_id": "20261126T195500-384b",
-  "created": "2026-11-26T16:56:47Z",
+  "input_hash": "cdf1066b8b9de51f38e2492c61a475f16fba5ab196a537b2537cfa4113333f7e",
+  "output_hash": "5cfac66c8529e0546edeeb271e0dc6d3ba7dffc3629eaaddb3db854e3a93b8d9",
+  "run_id": "20261126T230056-86dd",
+  "created": "2026-11-26T20:04:54Z",
   "inputs": {
-    "prompt": "The same scene, same people, same light and same moment as the last reference image, recomposed as a wide frame. wide shot of golden sunrise breaking over misty green Ethiopian highland hills, a small house with a corrugated roof and eucalyptus trees in the foreground, empty wooden chair by the doorway, peaceful dawn. horizontal 16:9 widescreen composition. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, Ethiopian highland home, subject centred in frame, painterly but realistic, no text, no lettering",
+    "prompt": "The same scene, same people, same light and same moment as the last reference image, recomposed as a wide frame. wide shot at sunrise over an ordinary Addis Ababa neighbourhood: low houses with corrugated roofs, a few mid-rise apartment blocks, eucalyptus trees, Entoto hills in soft morning haze behind, an empty plastic chair on a small balcony in the foreground, peaceful dawn, no skyscrapers. horizontal 16:9 widescreen composition. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, a modest middle-income family home in Addis Ababa: plastered walls, a sofa with a woven cover, a small coffee table with a jebena, family photos on the wall, subject centred in frame, realistic, no text, no lettering",
     "size": [
       1344,
       768
@@ -13,9 +13,9 @@
     "steps": 4,
     "model": "@cf/black-forest-labs/flux-2-klein-4b",
     "refs": [
-      "68e26d85b857be02c1483fb86d66413020b86997a0b58b85360397ba7138512c"
+      "e7dcd5a50c5f47112dae92339c4bc982c0ed8d8da444e089df86454fe29c32f2"
     ],
     "ref_max_px": 496
   },
-  "seed_used": 104
+  "seed_used": 1104
 }

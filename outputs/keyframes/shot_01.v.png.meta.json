@@ -1,10 +1,10 @@
 {
-  "input_hash": "1b1c450f941e40d28518689830a3fdd08ebeef2d7c23990eeead945b2870b92d",
-  "output_hash": "cc808f79139f07024c71b12f60b85c29a7f30cd082362c54f76a337496ca279a",
-  "run_id": "20261126T220841-35a3",
-  "created": "2026-11-26T19:08:55Z",
+  "input_hash": "e2001a295c5c92243f45947270e85cd53c5422aef1821906219de7ae480a6e96",
+  "output_hash": "f36a920797f369a025716b678116120a4a83da80f384c714e2c28d4d835715d9",
+  "run_id": "20261126T230056-86dd",
+  "created": "2026-11-26T20:03:11Z",
   "inputs": {
-    "prompt": "medium close-up in profile of the girl kneeling beside a wide metal basin of water on a woven straw mat, holding a round brown clay water pitcher with both hands and pouring a thin stream of water into the basin, eyes lowered with care and humility, her face lit by warm golden light from a window off frame, no lamp, no candle. Characters (match the reference images exactly): daughter = an eight-year-old Habesha Ethiopian girl with dark brown skin, East African features, hair in neat cornrow braids (shuruba), round face, big dark eyes, wearing a white cotton dress with a thin green-yellow-red tibeb border. vertical 9:16 composition. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, Ethiopian highland home, subject centred in frame, painterly but realistic, no text, no lettering",
+    "prompt": "medium close-up in profile of the girl kneeling on a woven mat in the family living room, holding a round brown clay water pitcher with both hands and pouring a thin stream of water into a wide metal basin, eyes lowered with care and humility, her face lit by warm golden light from a window off frame, no lamp, no candle. Characters (match the reference images exactly): daughter = an eight-year-old Habesha Ethiopian girl with dark brown skin, East African features, hair in neat cornrow braids (shuruba), round face, big dark eyes, wearing a white cotton dress with a thin green-yellow-red tibeb border. vertical 9:16 composition. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, a modest middle-income family home in Addis Ababa: plastered walls, a sofa with a woven cover, a small coffee table with a jebena, family photos on the wall, subject centred in frame, realistic, no text, no lettering",
     "size": [
       768,
       1344
@@ -13,7 +13,7 @@
     "steps": 4,
     "model": "@cf/black-forest-labs/flux-2-klein-4b",
     "refs": [
-      "6393edc9f42b296d8994b2d09c0dd179448e80a9c77e084c5cce1b13b2c77343"
+      "7102e8ecf2057b57f2a581b1a323211441a7663781f6bc330c2594e1c76f606a"
     ],
     "ref_max_px": 496
   },

@@ -1,10 +1,10 @@
 {
-  "input_hash": "428bba9b082ad5acffbbc5a552eec1c828e56f5538ba2106d8b0ea0813ce6246",
-  "output_hash": "61579b43857f706736e9bff5248f67cc86b025b4effc72fc3eb53c6ad01ac5e3",
-  "run_id": "20261126T195500-384b",
-  "created": "2026-11-26T16:55:39Z",
+  "input_hash": "f083396cc85dad0ae17039fedbf8fe3e6de368475c8daa83c7f1f6faea28d5f8",
+  "output_hash": "d9d59b088dd8453426e96575f9b22676321a15897760cc5123894747973e8bb3",
+  "run_id": "20261126T230056-86dd",
+  "created": "2026-11-26T20:03:44Z",
   "inputs": {
-    "prompt": "The same scene, same people, same light and same moment as the last reference image, recomposed as a wide frame. medium shot: the father sits on a low wooden chair with his feet in a metal basin of water; the girl kneels on the mat beside the basin and looks up at him; he rests one gentle hand on top of her head in blessing, warm pure smile. Characters (match the reference images exactly): father = a kind Habesha Ethiopian man in his late forties with dark brown skin, East African features, short greying tightly curled hair and a short grey beard, warm brown eyes, wearing a white cotton gabi shawl over a simple shirt; daughter = an eight-year-old Habesha Ethiopian girl with dark brown skin, East African features, hair in neat cornrow braids (shuruba), round face, big dark eyes, wearing a white cotton dress with a thin green-yellow-red tibeb border. horizontal 16:9 widescreen composition. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, Ethiopian highland home, subject centred in frame, painterly but realistic, no text, no lettering",
+    "prompt": "The same scene, same people, same light and same moment as the last reference image, recomposed as a wide frame. medium shot in the family living room: the father sits on the sofa with his feet in a metal basin of water; the girl kneels on the mat beside the basin and looks up at him; he rests one gentle hand on top of her head in blessing, warm pure smile. Characters (match the reference images exactly): father = a kind Habesha Ethiopian man in his late forties with dark brown skin, East African features, short greying tightly curled hair and a short grey beard, warm brown eyes, wearing a white cotton gabi shawl over a simple shirt; daughter = an eight-year-old Habesha Ethiopian girl with dark brown skin, East African features, hair in neat cornrow braids (shuruba), round face, big dark eyes, wearing a white cotton dress with a thin green-yellow-red tibeb border. horizontal 16:9 widescreen composition. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, a modest middle-income family home in Addis Ababa: plastered walls, a sofa with a woven cover, a small coffee table with a jebena, family photos on the wall, subject centred in frame, realistic, no text, no lettering",
     "size": [
       1344,
       768
@@ -13,9 +13,9 @@
     "steps": 4,
     "model": "@cf/black-forest-labs/flux-2-klein-4b",
     "refs": [
-      "213a7cb684165685f1633c3b972020b075f4ca0b3cfb9790f200032263f487fe",
-      "6393edc9f42b296d8994b2d09c0dd179448e80a9c77e084c5cce1b13b2c77343",
-      "bcc37b436f33d5768062602c7e17b59371141b24cd9888124d38149e2b2f564e"
+      "f148d29a43a5088297d7698b5557ad60718048003171ec8f00783c1aa71a648e",
+      "7102e8ecf2057b57f2a581b1a323211441a7663781f6bc330c2594e1c76f606a",
+      "f6dff9bd4b88df5768e7b110d43f3ee3f3d438d827fe0263307b880ea6053106"
     ],
     "ref_max_px": 496
   },

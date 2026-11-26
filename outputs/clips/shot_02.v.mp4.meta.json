@@ -1,12 +1,12 @@
 {
-  "input_hash": "d9ccb42d75ddcf2d2243957ea5fdb10b9d0d1cb590e9f9ae11a22c5a62166507",
-  "output_hash": "c7266555f3c17c6c931752356a81d5fbd796de80acfe1e12557df41ba4a0efa6",
-  "run_id": "20261126T200022-ea16",
-  "created": "2026-11-26T17:01:05Z",
+  "input_hash": "21b5852ce5b440139c9388c46c429e0e580074eddbf146c19c596f8b2d8bc646",
+  "output_hash": "8e6b71a6d6dbc837c9561de9354467b6ec6dd20e65b4b3ec8de266abcfed25ba",
+  "run_id": "20261126T230056-86dd",
+  "created": "2026-11-26T20:07:21Z",
   "inputs": {
-    "keyframe": "bcc37b436f33d5768062602c7e17b59371141b24cd9888124d38149e2b2f564e",
+    "keyframe": "f6dff9bd4b88df5768e7b110d43f3ee3f3d438d827fe0263307b880ea6053106",
     "move": "pull_out",
-    "duration": 11.5,
+    "duration": 10.5,
     "aspect": "9:16",
     "fps": 24,
     "zoom": 0.1,

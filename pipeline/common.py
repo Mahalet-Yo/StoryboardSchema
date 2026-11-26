@@ -94,7 +94,8 @@ def classify_http(status: int, body: str, retry_after: str | None = None) -> Exc
     if status == 429:
         # Daily quotas answer 429 with a wait of hours: retrying inside this run is pointless.
         hours = re.search(r"retry in (\d+)h", body)
-        if hours or (wait is not None and wait > 120):
+        daily = re.search(r"per day|daily free allocation", body)
+        if hours or daily or (wait is not None and wait > 120):
             return PermanentError(f"HTTP 429 quota exhausted: {body}")
         return TransientError(f"HTTP 429: {body}", wait)
     if status >= 500 or status == 408:

@@ -69,3 +69,8 @@ def test_secrets_are_redacted_from_logs(monkeypatch):
     assert "AIzaFAKE" not in common.redact("key=AIzaFAKEFAKEFAKE1234 failed")
     fake_token = "gh" + "p_" + "x" * 32  # built at runtime so the secrets scan does not flag this file
     assert "<redacted>" in common.redact(f"token {fake_token}")
+
+
+def test_cloudflare_daily_allocation_429_is_not_retried():
+    body = '{"errors":[{"message":"AiError: you have used up your daily free allocation of 10,000 neurons"}]}'
+    assert isinstance(common.classify_http(429, body), PermanentError)

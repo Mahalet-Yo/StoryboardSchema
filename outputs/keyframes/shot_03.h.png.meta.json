@@ -1,10 +1,10 @@
 {
-  "input_hash": "aa3a045a12414487620e32be5ff4e72fd379f6752561ec4f4b369c53737c5189",
-  "output_hash": "dc62648ade02eb9b55d19ca94a601d010923c5c2f757dc9a659b3885d44d8e47",
-  "run_id": "20261126T195500-384b",
-  "created": "2026-11-26T16:56:06Z",
+  "input_hash": "96d0b51f0615af011cbcbaea3b4d9f9ae7dbe090abf589cd8e5f2f8a2a234b3b",
+  "output_hash": "04bacba389288c4ee19bb99fbea7325e7d82e0741e2ce5002311642dc2ef921b",
+  "run_id": "20261126T230056-86dd",
+  "created": "2026-11-26T20:04:13Z",
   "inputs": {
-    "prompt": "The same scene, same people, same light and same moment as the last reference image, recomposed as a wide frame. close-up portrait of the girl's face looking up with trust and reverence, listening, warm golden rim light, soft lamp-lit room behind her. Characters (match the reference images exactly): daughter = an eight-year-old Habesha Ethiopian girl with dark brown skin, East African features, hair in neat cornrow braids (shuruba), round face, big dark eyes, wearing a white cotton dress with a thin green-yellow-red tibeb border. horizontal 16:9 widescreen composition. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, Ethiopian highland home, subject centred in frame, painterly but realistic, no text, no lettering",
+    "prompt": "The same scene, same people, same light and same moment as the last reference image, recomposed as a wide frame. close-up portrait of the girl's face looking up with trust and reverence, listening, warm golden rim light, the soft living room behind her. Characters (match the reference images exactly): daughter = an eight-year-old Habesha Ethiopian girl with dark brown skin, East African features, hair in neat cornrow braids (shuruba), round face, big dark eyes, wearing a white cotton dress with a thin green-yellow-red tibeb border. horizontal 16:9 widescreen composition. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, a modest middle-income family home in Addis Ababa: plastered walls, a sofa with a woven cover, a small coffee table with a jebena, family photos on the wall, subject centred in frame, realistic, no text, no lettering",
     "size": [
       1344,
       768
@@ -13,8 +13,8 @@
     "steps": 4,
     "model": "@cf/black-forest-labs/flux-2-klein-4b",
     "refs": [
-      "6393edc9f42b296d8994b2d09c0dd179448e80a9c77e084c5cce1b13b2c77343",
-      "9f7a2ae112cd2e560e5f97e5aee458adca10e6dd778193c6716b48aa567f8f85"
+      "7102e8ecf2057b57f2a581b1a323211441a7663781f6bc330c2594e1c76f606a",
+      "0e59c415f976106d91f671994e3432fd23c851751ebe4653b27b71f8bcf0e231"
     ],
     "ref_max_px": 496
   },

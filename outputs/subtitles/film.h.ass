@@ -11,13 +11,14 @@ Style: Default,DejaVu Sans,50,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,0,0,0,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.60,0:00:06.98,Default,,0,0,0,,{\fad(150,150)}As a child, washing my father's feet, my\Nheart would fill with so many blessings.
-Dialogue: 0,0:00:09.60,0:00:14.43,Default,,0,0,0,,{\fad(150,150)}'May God bless you, may He go before you\Non your path,
-Dialogue: 0,0:00:14.43,0:00:19.80,Default,,0,0,0,,{\fad(150,150)}may He raise you in wisdom and\Nunderstanding,' he would say.
-Dialogue: 0,0:00:21.10,0:00:27.42,Default,,0,0,0,,{\fad(150,150)}Words from a pure heart were sown in me\Nlike a seed, and they grew.
-Dialogue: 0,0:00:30.10,0:00:35.64,Default,,0,0,0,,{\fad(150,150)}Many years passed. My father went home to\Nhis Creator,
-Dialogue: 0,0:00:35.64,0:00:38.92,Default,,0,0,0,,{\fad(150,150)}but his blessing stayed with me.
-Dialogue: 0,0:00:40.23,0:00:48.02,Default,,0,0,0,,{\fad(150,150)}The peace, wisdom and honour he wished for\Nme came true in my life, one by one.
-Dialogue: 0,0:00:49.35,0:00:54.47,Default,,0,0,0,,{\fad(150,150)}In every success of mine, I remember my\Nfather's pure heart.
-Dialogue: 0,0:00:58.35,0:01:04.25,Default,,0,0,0,,{\fad(150,150)}And when my father looks on my life from\Nheaven, his heart fills with joy.
-Dialogue: 0,0:01:08.35,0:01:12.58,Default,,0,0,0,,{\fad(150,150)}Seeing his daughter live by his blessing,\Nhe rejoices.
+Dialogue: 0,0:00:00.60,0:00:08.22,Default,,0,0,0,,{\fad(150,150)}As a child, washing my father's feet, my\Nheart would fill with so many blessings.
+Dialogue: 0,0:00:09.60,0:00:13.96,Default,,0,0,0,,{\fad(150,150)}'May God bless you, may He go before you\Non your path,
+Dialogue: 0,0:00:13.96,0:00:18.80,Default,,0,0,0,,{\fad(150,150)}may He raise you in wisdom and\Nunderstanding,' he would say.
+Dialogue: 0,0:00:20.10,0:00:26.03,Default,,0,0,0,,{\fad(150,150)}Words from a pure heart were sown in me\Nlike a seed, and they grew.
+Dialogue: 0,0:00:29.10,0:00:34.86,Default,,0,0,0,,{\fad(150,150)}Many years passed. My father went home to\Nhis Creator,
+Dialogue: 0,0:00:34.86,0:00:38.28,Default,,0,0,0,,{\fad(150,150)}but his blessing stayed with me.
+Dialogue: 0,0:00:39.60,0:00:43.32,Default,,0,0,0,,{\fad(150,150)}Today I am a software engineer. The peace,
+Dialogue: 0,0:00:43.32,0:00:49.33,Default,,0,0,0,,{\fad(150,150)}wisdom and honour he wished for me came\Ntrue in my life, one by one.
+Dialogue: 0,0:00:50.64,0:00:56.15,Default,,0,0,0,,{\fad(150,150)}In every success of mine, I remember my\Nfather's pure heart.
+Dialogue: 0,0:00:59.64,0:01:05.56,Default,,0,0,0,,{\fad(150,150)}And when my father looks on my life from\Nheaven, his heart fills with joy.
+Dialogue: 0,0:01:09.64,0:01:14.39,Default,,0,0,0,,{\fad(150,150)}Seeing his daughter live by his blessing,\Nhe rejoices.

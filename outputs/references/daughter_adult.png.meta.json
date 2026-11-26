@@ -1,10 +1,10 @@
 {
-  "input_hash": "a073453703eda01e34f6e6ea4014490c69a11da7f34f6dadec85eae7dce737a1",
-  "output_hash": "28da7cf21c4aedfcb99bd4a1e0b84ffad0332e69ab89c17c79de628525e33bda",
-  "run_id": "20261126T195400-8db2",
-  "created": "2026-11-26T16:54:12Z",
+  "input_hash": "c78fb8b92621ed343036c29841df0eb27ffb55cda1bba6091b85bac684fe6119",
+  "output_hash": "2f40d19a5220b44c45da30c9f6366df17b4d9f92d4c7dbb114a4508a8206ec47",
+  "run_id": "20261126T230056-86dd",
+  "created": "2026-11-26T20:03:00Z",
   "inputs": {
-    "prompt": "portrait reference photo of a twenty-five-year-old Habesha Ethiopian woman with dark brown skin and East African features, round face, big dark eyes, hair in cornrow braids gathered back, white habesha kemis with a green-yellow-red tibeb border, calm confident smile, head and shoulders, front view, plain warm background. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, Ethiopian highland home, subject centred in frame, painterly but realistic, no text, no lettering",
+    "prompt": "portrait reference photo of a twenty-five-year-old Habesha Ethiopian woman with dark brown skin and East African features, round face, big dark eyes, hair in cornrow braids gathered back, white habesha kemis with a green-yellow-red tibeb border, calm confident smile, head and shoulders, front view, plain warm background. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, a modest middle-income family home in Addis Ababa: plastered walls, a sofa with a woven cover, a small coffee table with a jebena, family photos on the wall, subject centred in frame, realistic, no text, no lettering",
     "size": [
       768,
       768
@@ -14,5 +14,6 @@
     "model": "@cf/black-forest-labs/flux-2-klein-4b",
     "refs": [],
     "ref_max_px": 496
-  }
+  },
+  "seed_used": 4103
 }

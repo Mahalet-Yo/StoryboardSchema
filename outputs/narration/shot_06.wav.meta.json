@@ -1,14 +1,14 @@
 {
-  "input_hash": "16d633afbb5acd4d929b11444bcbc7601a7e920b5541cee29a3d588d748ddef7",
-  "output_hash": "ff653f44bac2bda3201e3cbabda9ccdb42ba3969838e8d364f3828a0e3da52c7",
-  "run_id": "20261126T194940-411e",
-  "created": "2026-11-26T16:51:03Z",
+  "input_hash": "be991d7e3ebb0658bd497e1eebf67ed6ccc0b44287a23e89e10376b412b4d30c",
+  "output_hash": "7ea28d60c5533d1a11e5986a11a3a826b5962124f83530a3a38e7939985ab542",
+  "run_id": "20261126T230056-86dd",
+  "created": "2026-11-26T20:02:03Z",
   "inputs": {
     "text": "በእያንዳንዱ ስኬቴ ውስጥ የአባቴን ንጹህ ልብ አስታውሳለሁ።",
     "voice": "Kore",
     "style": "a grown daughter remembering her late father: warm, tender, unhurried, quiet reverence, close to the microphone",
-    "take": 1
+    "take": 2
   },
-  "model": "gemini-3.8-flash-lite-tts",
-  "speech_s": 4.62
+  "model": "gemini-3.8-flash-tts",
+  "speech_s": 5.01
 }

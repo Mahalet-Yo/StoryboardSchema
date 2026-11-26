@@ -85,3 +85,8 @@ What broke, what I tried, and what fixed it or worked around it, in the order it
 - **Tried:** the fallback chain worked as designed. It stopped at once on a daily-quota 429 and moved to the next model, which was also exhausted, then stopped the run with a clear message. No retries were wasted.
 - **Worked around (for now):** reverted the text so `make film` still runs from the cached narration. The fix is ready to apply: normalised spelling and «…» quotes for shot 2, ideally voiced by full Flash TTS from a Gemini key in a separate Google project (quota is per project).
 - **Lesson:** spending two TTS calls on the E13 ceiling experiment cost the main film a re-take. With a 10–12 request daily budget, narration re-takes should be reserved first, before experiments.
+
+## F12. Cloudflare's daily image allowance ran out, and the pipeline retried it
+- **What broke:** fixing the v2 sky shots, the first call returned `429 … you have used up your daily free allocation of 10,000 neurons` (`runs.jsonl`, run `20261126T232350-d4ff`). v1, test 2 and the full v2 set had used about 60 images in one day, as COSTS.md predicted.
+- **Our bug:** `classify_http` only recognised Gemini's "retry in Nh" wording, so this daily-quota 429 was retried four times.
+- **Fixed:** "per day" and "daily free allocation" now count as permanent too (`test_cloudflare_daily_allocation_429_is_not_retried`). Shot 7 reused its v1 keyframe through the cache. Shot 8 waits for the reset (DESIGN.md §7).

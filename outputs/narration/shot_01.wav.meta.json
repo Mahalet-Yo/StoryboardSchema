@@ -1,14 +1,14 @@
 {
-  "input_hash": "d0d1aa3ea1404f54c3034683bc0eb74b841bf599f750937503aee45e935b3b5e",
-  "output_hash": "97a0fc153ac026552cfaa194326e0ca898caf2eb5571d8af14b56cfd066d9e2e",
-  "run_id": "20261126T194940-411e",
-  "created": "2026-11-26T16:49:45Z",
+  "input_hash": "1173990289d65377467fa3950f752f88b51c39d504458f554059f91c9d92b6ee",
+  "output_hash": "09a14c35a1d6a08a57882c44c8faafd92b9aadab6fe27d0a79a77eaf91d3efcf",
+  "run_id": "20261126T230056-86dd",
+  "created": "2026-11-26T20:01:02Z",
   "inputs": {
     "text": "በልጅነቴ የአባቴን እግር ሳጥብ፣ ልቤ በብዙ ምርቃት ይሞላ ነበር።",
     "voice": "Kore",
     "style": "a grown daughter remembering her late father: warm, tender, unhurried, quiet reverence, close to the microphone",
-    "take": 1
+    "take": 2
   },
-  "model": "gemini-3.8-flash-lite-tts",
-  "speech_s": 5.88
+  "model": "gemini-3.8-flash-tts",
+  "speech_s": 7.12
 }

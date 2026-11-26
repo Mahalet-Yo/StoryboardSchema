@@ -1,10 +1,10 @@
 {
-  "input_hash": "40865fdb476afd419bad5d25133c2b4b27df01c192d575390cb178ef1ca59eeb",
-  "output_hash": "68e26d85b857be02c1483fb86d66413020b86997a0b58b85360397ba7138512c",
-  "run_id": "20261126T195500-384b",
-  "created": "2026-11-26T16:56:28Z",
+  "input_hash": "bfb09fd0f330d1f3fdda0414f6668bbf7602df40ad8443d31bf6975aea0db3a2",
+  "output_hash": "e7dcd5a50c5f47112dae92339c4bc982c0ed8d8da444e089df86454fe29c32f2",
+  "run_id": "20261126T230056-86dd",
+  "created": "2026-11-26T20:04:28Z",
   "inputs": {
-    "prompt": "wide shot of golden sunrise breaking over misty green Ethiopian highland hills, a small house with a corrugated roof and eucalyptus trees in the foreground, empty wooden chair by the doorway, peaceful dawn. vertical 9:16 composition. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, Ethiopian highland home, subject centred in frame, painterly but realistic, no text, no lettering",
+    "prompt": "wide shot at sunrise over an ordinary Addis Ababa neighbourhood: low houses with corrugated roofs, a few mid-rise apartment blocks, eucalyptus trees, Entoto hills in soft morning haze behind, an empty plastic chair on a small balcony in the foreground, peaceful dawn, no skyscrapers. vertical 9:16 composition. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, a modest middle-income family home in Addis Ababa: plastered walls, a sofa with a woven cover, a small coffee table with a jebena, family photos on the wall, subject centred in frame, realistic, no text, no lettering",
     "size": [
       768,
       1344

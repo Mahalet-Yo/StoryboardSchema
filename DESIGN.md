@@ -102,6 +102,24 @@ A separate viewer comment from the same round: the narrator "doesn't sound fluen
 
 **What we learned:** the pictures and the mix now work for this audience. The weak link is the Amharic voice, and that is a quota problem, not a design one: the full Flash TTS model and two corrected lines are the first thing to redo when the quota resets.
 
-## 7. Reflection
+## 7. Version 2: the same blessing in an Addis Ababa home
+
+v1 is preserved as the git tag `v1`: the same storyboard, narration, keyframes and films, exactly as tested.
+
+v2 changes three things. Each answers something the audience or the brief raised.
+
+| Change | Why |
+|---|---|
+| **Setting:** a modest, middle-income family home in Addis Ababa (plastered walls, a sofa with a woven cover, a jebena on the coffee table, family photos), and an ordinary neighbourhood at dawn instead of rural highlands. No skyscrapers | Most of the audience grew up in city homes like this. The rural highlands read as heritage seen from outside, and nobody had chosen that setting on purpose: it came from the first draft's wording |
+| **Her success is concrete:** the grown daughter is a software engineer, at her desk in a modest office (shot 5, with the line "Today I am a software engineer…"), and she holds her father's photograph in shot 6 | Test 2 viewers felt "the emotion the girl feels", so her fulfilment should be specific, not generic. The photograph was in the original brief's ending but never in the storyboard |
+| **Voice:** all eight lines re-voiced with the full Gemini Flash TTS model (v1 used Flash-Lite because of the quota). Same voice and warm style. Shot 2 has one spelling of God and Ethiopic «…» quotes; shot 3's verb agrees with its plural subject (ቃላት … አደጉ) | Test 2 reported mispronunciation in shot 3 and around shot 2, plus "doesn't sound fluent" (F11) |
+
+**Result (measured):** all 8 lines re-voiced with full Flash TTS (one per-minute 429 retried). 19 images, 6 of them flagged by the output filter and reseeded automatically. The film is 82.54 s, −14.3 LUFS, −1.5 dBTP, and QC passed in both ratios.
+
+**Known flaw, half fixed:** the style block describes the living room, so that interior leaked into shots 7 and 8 (the sky and the father in heaven). A new per-shot `style_override` lets a shot replace the style block.
+- **Shot 7** now uses v1's sky prompt and style, so its v1 keyframe is a real cache hit, restored from the `v1` tag with 0 model calls.
+- **Shot 8** still shows picture frames behind the father. Its fix needs 2 image calls, and Cloudflare's daily allowance ran out mid-attempt (FAILURES F12). It is the first thing to regenerate after the reset.
+
+## 8. Reflection
 
 What mattered most was keeping the story's emotional and cultural meaning, not image quality alone. Every generated element went through human judgement: the narration through native-speaker testers, the faces through a check that they look like the people this film is for, and the music through a measurement and a listen under the voice. The intended feeling is simple: a parent's love, wisdom and blessing stay with a child across generations.

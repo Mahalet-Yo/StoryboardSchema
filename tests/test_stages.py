@@ -75,3 +75,9 @@ def test_keyframe_prompt_carries_style_and_character_wording(board):
     for name in shot["characters"]:
         assert board["characters"][name]["description"] in prompt
     assert "same scene" in keyframes.shot_prompt(board, shot, "16:9")
+
+
+def test_style_override_replaces_the_style_block_for_one_shot(board):
+    shot = dict(board["shots"][0], style_override="open sky, golden light, outdoors only, no interior")
+    prompt = keyframes.shot_prompt(board, shot, "9:16")
+    assert "open sky, golden light" in prompt and board["style_block"] not in prompt

@@ -2,14 +2,14 @@
   "films": [
     {
       "file": "outputs/final/film.vertical.mp4",
-      "duration_s": 81.25,
-      "integrated_lufs": -14.4,
+      "duration_s": 82.54,
+      "integrated_lufs": -14.3,
       "true_peak_dbtp": -1.5
     },
     {
       "file": "outputs/final/film.horizontal.mp4",
-      "duration_s": 81.25,
-      "integrated_lufs": -14.4,
+      "duration_s": 82.54,
+      "integrated_lufs": -14.3,
       "true_peak_dbtp": -1.5
     }
   ],

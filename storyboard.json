@@ -1,14 +1,14 @@
 {
   "version": 2,
   "title": "The Blessings of Pure Hands",
-  "logline": "A daughter who once washed her father's feet carries his spoken blessing through his death and into her adult life.",
+  "logline": "A daughter who washed her father's feet in their small Addis Ababa home carries his blessing through his death into her life as a software engineer.",
   "language": "am",
   "subtitle_language": "en",
   "aspect_ratios": [
     "9:16",
     "16:9"
   ],
-  "style_block": "warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, Ethiopian highland home, subject centred in frame, painterly but realistic, no text, no lettering",
+  "style_block": "warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, a modest middle-income family home in Addis Ababa: plastered walls, a sofa with a woven cover, a small coffee table with a jebena, family photos on the wall, subject centred in frame, realistic, no text, no lettering",
   "characters": {
     "father": {
       "description": "a kind Habesha Ethiopian man in his late forties with dark brown skin, East African features, short greying tightly curled hair and a short grey beard, warm brown eyes, wearing a white cotton gabi shawl over a simple shirt",
@@ -43,9 +43,9 @@
   },
   "providers": {
     "tts": {
-      "model": "gemini-3.8-flash-lite-tts",
+      "model": "gemini-3.8-flash-tts",
       "fallback_models": [
-        "gemini-3.8-flash-tts"
+        "gemini-3.8-flash-lite-tts"
       ],
       "voice": "Kore",
       "style": "a grown daughter remembering her late father: warm, tender, unhurried, quiet reverence, close to the microphone"
@@ -130,13 +130,14 @@
       "characters": [
         "daughter_child"
       ],
-      "keyframe_prompt": "medium close-up in profile of the girl kneeling beside a wide metal basin of water on a woven straw mat, holding a round brown clay water pitcher with both hands and pouring a thin stream of water into the basin, eyes lowered with care and humility, her face lit by warm golden light from a window off frame, no lamp, no candle",
+      "keyframe_prompt": "medium close-up in profile of the girl kneeling on a woven mat in the family living room, holding a round brown clay water pitcher with both hands and pouring a thin stream of water into a wide metal basin, eyes lowered with care and humility, her face lit by warm golden light from a window off frame, no lamp, no candle",
       "seed": 101,
       "camera_move": "push_in",
       "motion_prompt": "slow gentle push-in as water pours softly into the basin",
       "narration_am": "በልጅነቴ የአባቴን እግር ሳጥብ፣ ልቤ በብዙ ምርቃት ይሞላ ነበር።",
       "narration_en": "As a child, washing my father's feet, my heart would fill with so many blessings.",
-      "music_cue": "memory"
+      "music_cue": "memory",
+      "narration_take": 2
     },
     {
       "shot_id": "shot_02",
@@ -147,13 +148,14 @@
         "father",
         "daughter_child"
       ],
-      "keyframe_prompt": "medium shot: the father sits on a low wooden chair with his feet in a metal basin of water; the girl kneels on the mat beside the basin and looks up at him; he rests one gentle hand on top of her head in blessing, warm pure smile",
+      "keyframe_prompt": "medium shot in the family living room: the father sits on the sofa with his feet in a metal basin of water; the girl kneels on the mat beside the basin and looks up at him; he rests one gentle hand on top of her head in blessing, warm pure smile",
       "seed": 102,
       "camera_move": "pull_out",
       "motion_prompt": "subtle slow pull-back with soft lamp glow",
-      "narration_am": "‘እግዚአብሔር ይባርክሽ፤ በመንገድሽ እግዜብሄር ይቅደምልሽ፣ በጥበብ እና በማስተዋል ያሳድግሽ’ ይለኝ ነበር።",
+      "narration_am": "«እግዚአብሔር ይባርክሽ፤ በመንገድሽ እግዚአብሔር ይቅደምልሽ፣ በጥበብ እና በማስተዋል ያሳድግሽ» ይለኝ ነበር።",
       "narration_en": "'May God bless you, may He go before you on your path, may He raise you in wisdom and understanding,' he would say.",
-      "music_cue": "memory"
+      "music_cue": "memory",
+      "narration_take": 2
     },
     {
       "shot_id": "shot_03",
@@ -163,59 +165,63 @@
       "characters": [
         "daughter_child"
       ],
-      "keyframe_prompt": "close-up portrait of the girl's face looking up with trust and reverence, listening, warm golden rim light, soft lamp-lit room behind her",
+      "keyframe_prompt": "close-up portrait of the girl's face looking up with trust and reverence, listening, warm golden rim light, the soft living room behind her",
       "seed": 103,
       "camera_move": "push_in",
       "motion_prompt": "very slow push toward her eyes",
-      "narration_am": "ከንጹህ ልብ የወጡ ቃላቶች እንደ ዘር በውስጤ ተዘርተው አደገ።",
+      "narration_am": "ከንጹህ ልብ የወጡ ቃላት እንደ ዘር በውስጤ ተዘርተው አደጉ።",
       "narration_en": "Words from a pure heart were sown in me like a seed, and they grew.",
-      "music_cue": "memory"
+      "music_cue": "memory",
+      "narration_take": 2
     },
     {
       "shot_id": "shot_04",
-      "reason": "An empty landscape carries the time jump and the death without showing a funeral; the sunrise says the blessing outlives him.",
+      "reason": "An ordinary Addis neighbourhood at dawn and an empty chair carry the time jump and the father's death without a funeral; the sunrise says the blessing outlives him.",
       "duration_sec": 10,
       "camera_type": "wide_establishing",
       "characters": [],
-      "keyframe_prompt": "wide shot of golden sunrise breaking over misty green Ethiopian highland hills, a small house with a corrugated roof and eucalyptus trees in the foreground, empty wooden chair by the doorway, peaceful dawn",
+      "keyframe_prompt": "wide shot at sunrise over an ordinary Addis Ababa neighbourhood: low houses with corrugated roofs, a few mid-rise apartment blocks, eucalyptus trees, Entoto hills in soft morning haze behind, an empty plastic chair on a small balcony in the foreground, peaceful dawn, no skyscrapers",
       "seed": 104,
       "camera_move": "pan_right",
       "motion_prompt": "slow pan across the sunlit highlands, mist drifting",
       "narration_am": "ብዙ ዓመታት አለፉ፤ አባቴም ወደ ፈጣሪው ሄደ፣ ግን ምርቃቱ አብሮኝ ቆየ።",
       "narration_en": "Many years passed. My father went home to his Creator, but his blessing stayed with me.",
-      "music_cue": "time_passes"
+      "music_cue": "time_passes",
+      "narration_take": 2
     },
     {
       "shot_id": "shot_05",
-      "reason": "Shows the blessing fulfilled: the same girl, now grown, standing in the light he wished for her.",
+      "reason": "Shows the blessing fulfilled in her own time: the same girl, now a software engineer, at work in the city she grew up in.",
       "duration_sec": 9,
       "camera_type": "medium_shot",
       "characters": [
         "daughter_adult"
       ],
-      "keyframe_prompt": "medium shot of the woman standing calmly and confidently in a sunlit courtyard in warm morning light, serene smile",
+      "keyframe_prompt": "medium shot of the woman working as a software engineer at a desk in a modest, bright office in Addis Ababa, laptop open in front of her with a soft screen glow, looking up from the screen with a calm, confident smile, colleagues softly out of focus behind her, no readable text on any screen",
       "seed": 105,
       "camera_move": "push_in",
       "motion_prompt": "slow tracking push-in as morning light reaches her face",
-      "narration_am": "የተመኘልኝ ሰላም፣ ጥበብ እና ክብር በሕይወቴ አንድ በአንድ ተፈጸሙ።",
-      "narration_en": "The peace, wisdom and honour he wished for me came true in my life, one by one.",
-      "music_cue": "fulfilment"
+      "narration_am": "ዛሬ የሶፍትዌር መሐንዲስ ነኝ፤ የተመኘልኝ ሰላም፣ ጥበብ እና ክብር በሕይወቴ አንድ በአንድ ተፈጸሙ።",
+      "narration_en": "Today I am a software engineer. The peace, wisdom and honour he wished for me came true in my life, one by one.",
+      "music_cue": "fulfilment",
+      "narration_take": 2
     },
     {
       "shot_id": "shot_06",
-      "reason": "The emotional peak: gratitude on her face as she remembers him, mirroring the child's close-up in shot 3.",
+      "reason": "The emotional peak: gratitude as she holds her father's photograph, the ending the original brief described, mirroring the child's close-up in shot 3.",
       "duration_sec": 9,
       "camera_type": "close_up",
       "characters": [
         "daughter_adult"
       ],
-      "keyframe_prompt": "close-up of the woman with gentle tears of gratitude in her eyes, looking softly upward, warm sunlight touching her face",
+      "keyframe_prompt": "close-up of the woman at home in the evening with gentle tears of gratitude, holding an old faded photograph of her father in both hands near her face, warm lamplight from off frame touching her face",
       "seed": 106,
       "camera_move": "tilt_up",
       "motion_prompt": "slow subtle tilt up with soft light shift",
       "narration_am": "በእያንዳንዱ ስኬቴ ውስጥ የአባቴን ንጹህ ልብ አስታውሳለሁ።",
       "narration_en": "In every success of mine, I remember my father's pure heart.",
-      "music_cue": "fulfilment"
+      "music_cue": "fulfilment",
+      "narration_take": 2
     },
     {
       "shot_id": "shot_07",
@@ -229,7 +235,9 @@
       "motion_prompt": "slow forward drift through soft golden light",
       "narration_am": "ከሰማይም አባቴ ሕይወቴን ሲያይ፣ ልቡ በደስታ ይሞላል።",
       "narration_en": "And when my father looks on my life from heaven, his heart fills with joy.",
-      "music_cue": "fulfilment"
+      "music_cue": "fulfilment",
+      "narration_take": 2,
+      "style_override": "warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, Ethiopian highland home, subject centred in frame, painterly but realistic, no text, no lettering"
     },
     {
       "shot_id": "shot_08",
@@ -239,13 +247,14 @@
       "characters": [
         "father"
       ],
-      "keyframe_prompt": "medium close-up of the father standing outdoors on a highland hilltop at golden hour, radiant warm sun rays and soft luminous clouds behind him, looking down with a joyful, thankful smile, peaceful",
+      "keyframe_prompt": "medium close-up of the father bathed in radiant, peaceful golden light against soft luminous clouds, looking down with a joyful, thankful smile, peaceful",
       "seed": 108,
       "camera_move": "pull_out",
       "motion_prompt": "slow gentle hold with soft golden glow",
       "narration_am": "ልጁ በምርቃቱ ስትኖር አይቶ፣ ይደሰታል።",
       "narration_en": "Seeing his daughter live by his blessing, he rejoices.",
-      "music_cue": "resolution"
+      "music_cue": "resolution",
+      "narration_take": 2
     }
   ]
 }
