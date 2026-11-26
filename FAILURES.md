@@ -74,3 +74,14 @@ What broke, what I tried, and what fixed it or worked around it, in the order it
 - **What broke:** translating for E13, `gemini-3.8-flash` answered `503 UNAVAILABLE: This model is currently experiencing high demand` four times, then timed out three times at 90 s. `gemini-3.5-flash` returned 503 too (`runs.jsonl`, `E13:translate:*`, from 17:47Z).
 - **Tried:** the retry loop did its job (backoff, 4 attempts), but a demand spike outlasts any sensible backoff.
 - **Fixed:** the tool now walks a model chain (3.8 Flash → 3.5 Flash → 3.1 Flash-Lite) with 2 attempts each and a 45 s timeout, and records which model translated (`translated_by`). Flash-Lite translated both lines. This may also explain the Amharic leaking into the Tigrinya (E13): a lighter model did the translation.
+
+## F11. A fluency fix blocked by the TTS quota: both models used up
+- **What broke:** a viewer said the narrator "doesn't sound fluent" in places, especially shot 2, the father's blessing. The likely causes:
+  - we voice with `gemini-3.8-flash-lite-tts`, because the full Flash TTS quota was gone (F2), while the reference project used full Flash TTS;
+  - shot 2 spells God two ways in one sentence (formal እግዚአብሔር, colloquial እግዜብሄር);
+  - shot 2 wraps the blessing in curly ‘…’ quotes instead of Ethiopic «…».
+
+  We changed only the spelling and the quote marks and regenerated shot 2. Both TTS models refused: `429 … limit … per day on Free Tier. Please retry in 13h27m` (`runs.jsonl`, run `20261126T213228-52e3`). Flash-Lite's daily cap turned out to be about 12 requests; we had used it on the narration, retries and the E13 language test.
+- **Tried:** the fallback chain worked as designed. It stopped at once on a daily-quota 429 and moved to the next model, which was also exhausted, then stopped the run with a clear message. No retries were wasted.
+- **Worked around (for now):** reverted the text so `make film` still runs from the cached narration. The fix is ready to apply: normalised spelling and «…» quotes for shot 2, ideally voiced by full Flash TTS from a Gemini key in a separate Google project (quota is per project).
+- **Lesson:** spending two TTS calls on the E13 ceiling experiment cost the main film a re-take. With a 10–12 request daily budget, narration re-takes should be reserved first, before experiments.
