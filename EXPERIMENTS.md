@@ -103,3 +103,13 @@ Each entry has a hypothesis, the one thing changed, the result, and the evidence
 - **Native-speaker check (pending):** a Tigrinya speaker and an Oromo speaker listen to `outputs/experiments/lang/shot_02.{ti,om}.wav` and answer: (1) Is the text your language, or mixed with Amharic? (2) Is the pronunciation understandable? Where does it break: names, ejectives, long vowels? (3) Would you watch the film in this voice? Record the answers here.
 - **What it shows about the pipeline:** a second language is one new storyboard field per shot plus this translation step. The timeline already absorbs the 1.44× length difference, so the Oromo cut would still be inside 60–90 s.
 - **Evidence:** `outputs/experiments/lang/results.json`, the two WAVs, and the `E13:*` lines in `runs.jsonl`.
+
+## E14. Test 2 asked for her face in shot 1: can the filter-safe framing show it?
+- **Hypothesis:** the output filter reacted to the child, the man's bare feet and touch together (F3), not to the child's face. A profile of the girl pouring, with the father's feet out of frame, will pass and give viewers her face first.
+- **Change:** shot 1 changed from `insert_shot` (no character) to `medium_close_up` with `daughter_child`. The prompt describes her face lit warmly, eyes lowered, pouring from a clay pitcher, with only the basin rim visible. Seed 101 unchanged.
+- **Result:**
+  - The first prompt passed the filter at once, but the model **merged two objects**: "oil lamp glow" plus "pitcher" became a lit lamp she was pouring water from.
+  - The second prompt names "a round brown clay water pitcher", moves the light to "a window off frame" and adds "no lamp, no candle". Correct in both aspect ratios: her face in profile, the pitcher pouring into the basin, and the same braids and tibeb border as the reference.
+  - The hypothesis held: the face itself was never the problem.
+- **Lesson:** a light source named in the prompt becomes an object in the frame. When two small props share a sentence, the model can fuse them. Put light off frame and name each prop once.
+- **Evidence:** runs `20261126T220800-e9a1` (lamp merged) and `20261126T220841-35a3` (fixed), 2 image calls each, every other keyframe cached; `outputs/keyframes/shot_01.v.png.meta.json` has the final prompt.
