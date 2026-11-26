@@ -68,6 +68,8 @@ The lesson isn't that the practice is wrong. A pipeline built around one hosted 
 3. The same film in Tigrinya and Afaan Oromo. FAILURES.md would document exactly where TTS fails; Oromo is not on the TTS language list.
 4. A small web form where a relative tells their story and the pipeline drafts a storyboard for a person to approve.
 
+## 7. Why this story
+
 I chose this story because in Ethiopian families a parent's blessing (*mirkat*) is not just words at a doorway. It is something people carry for the rest of their lives, and it can stay meaningful long after the parent is gone. I wanted a film that someone could send to their own father or mother.
 
 What I will remember from building it is that the model calls were the easy part. The work was everything around them: a contract the whole pipeline agrees on, a log that tells the truth about what happened, a cache that makes a one-line change cheap, and the habit of asking real people early. The models will be replaced in a few months; that way of working is what I take into the next project.
