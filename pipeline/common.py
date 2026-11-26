@@ -311,7 +311,7 @@ def ffmpeg(args: list[str], *, capture: bool = False) -> str:
     proc = subprocess.run(cmd, capture_output=True, text=True)
     if proc.returncode != 0:
         raise RuntimeError("ffmpeg failed: " + " ".join(cmd[3:])[:300] + "\n" + proc.stderr[-1500:])
-    return proc.stderr if capture else ""
+    return (proc.stdout + proc.stderr) if capture else ""
 
 
 def media_duration(path: Path) -> float:
