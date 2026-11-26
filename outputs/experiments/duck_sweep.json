@@ -1,0 +1,46 @@
+[
+  {
+    "name": "none",
+    "threshold": 1.0,
+    "ratio": 1,
+    "attack_ms": 20,
+    "release_ms": 250,
+    "music_under_speech_db": -25.0,
+    "music_in_pauses_db": -24.3,
+    "duck_depth_db": 0.0,
+    "pause_loss_db": 0.0
+  },
+  {
+    "name": "brief default",
+    "threshold": 0.02,
+    "ratio": 6,
+    "attack_ms": 300,
+    "release_ms": 1500,
+    "music_under_speech_db": -36.5,
+    "music_in_pauses_db": -24.7,
+    "duck_depth_db": 11.5,
+    "pause_loss_db": 0.4
+  },
+  {
+    "name": "gentle",
+    "threshold": 0.05,
+    "ratio": 4,
+    "attack_ms": 120,
+    "release_ms": 900,
+    "music_under_speech_db": -29.8,
+    "music_in_pauses_db": -24.3,
+    "duck_depth_db": 4.8,
+    "pause_loss_db": 0.0
+  },
+  {
+    "name": "soft",
+    "threshold": 0.1,
+    "ratio": 3,
+    "attack_ms": 100,
+    "release_ms": 700,
+    "music_under_speech_db": -27.0,
+    "music_in_pauses_db": -24.3,
+    "duck_depth_db": 2.0,
+    "pause_loss_db": 0.0
+  }
+]
