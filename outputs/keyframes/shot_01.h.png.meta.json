@@ -1,10 +1,10 @@
 {
-  "input_hash": "3dc3e35af1c1cbff531f6a3ebe378ff3c30f75b512fe8bef3a8a1c2f3fc59ab2",
-  "output_hash": "f8e3b878b9b17ed2d7a88e248fc7154ce6096ca2fb743882d4f7468bd020e7af",
-  "run_id": "20261126T195500-384b",
-  "created": "2026-11-26T16:55:08Z",
+  "input_hash": "a5ec94fbf1222798bfc79d712760853671cb0190314d829e83a7f8af3ec4dea6",
+  "output_hash": "b354cfe92ba19f6973db744364d3b3aa3672f64ff4a958380fc3962c53069e25",
+  "run_id": "20261126T220841-35a3",
+  "created": "2026-11-26T19:09:07Z",
   "inputs": {
-    "prompt": "The same scene, same people, same light and same moment as the last reference image, recomposed as a wide frame. insert shot from above: small hands hold a clay pitcher and pour a thin stream of warm water into a wide metal basin on a woven straw mat, a white cotton dress hem with a green-yellow-red tibeb border at the edge of frame, oil lamp glow, steam rising. horizontal 16:9 widescreen composition. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, Ethiopian highland home, subject centred in frame, painterly but realistic, no text, no lettering",
+    "prompt": "The same scene, same people, same light and same moment as the last reference image, recomposed as a wide frame. medium close-up in profile of the girl kneeling beside a wide metal basin of water on a woven straw mat, holding a round brown clay water pitcher with both hands and pouring a thin stream of water into the basin, eyes lowered with care and humility, her face lit by warm golden light from a window off frame, no lamp, no candle. Characters (match the reference images exactly): daughter = an eight-year-old Habesha Ethiopian girl with dark brown skin, East African features, hair in neat cornrow braids (shuruba), round face, big dark eyes, wearing a white cotton dress with a thin green-yellow-red tibeb border. horizontal 16:9 widescreen composition. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, Ethiopian highland home, subject centred in frame, painterly but realistic, no text, no lettering",
     "size": [
       1344,
       768
@@ -13,7 +13,8 @@
     "steps": 4,
     "model": "@cf/black-forest-labs/flux-2-klein-4b",
     "refs": [
-      "71aac3e9a60922cdcc9d27daafb8a4dd4830be2bc4f6bdba55294fb51304905f"
+      "6393edc9f42b296d8994b2d09c0dd179448e80a9c77e084c5cce1b13b2c77343",
+      "cc808f79139f07024c71b12f60b85c29a7f30cd082362c54f76a337496ca279a"
     ],
     "ref_max_px": 496
   },
