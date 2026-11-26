@@ -1,8 +1,8 @@
-# The Blessings of Pure Hands: a heritage short made by a pipeline
+# AI Content Generation
 
-An 81-second film in Amharic with English subtitles, about a daughter who washed her father's feet and carried his blessing through his death into her own life. It is generated from one file, [`storyboard.json`](storyboard.json), by a five-stage pipeline: narration, keyframes, moving shots, music and assembly.
+A pipeline that turns one storyboard file into a narrated, scored, subtitled short film in 9:16 and 16:9. Its first production is **The Blessings of Pure Hands**: an 81-second film in Amharic with English subtitles, about a daughter who washed her father's feet and carried his blessing through his death into her own life. All five stages (narration, keyframes, moving shots, music and assembly) read the same [`storyboard.json`](storyboard.json).
 
-[![ci](https://github.com/Mahalet-Yo/StoryboardSchema/actions/workflows/ci.yml/badge.svg)](https://github.com/Mahalet-Yo/StoryboardSchema/actions/workflows/ci.yml)
+[![ci](https://github.com/Mahalet-Yo/ai-content-generation/actions/workflows/ci.yml/badge.svg)](https://github.com/Mahalet-Yo/ai-content-generation/actions/workflows/ci.yml)
 
 | | |
 |---|---|
@@ -16,7 +16,7 @@ An 81-second film in Amharic with English subtitles, about a daughter who washed
 You need Linux or macOS, Python 3.12+ and `make`. FFmpeg is optional: if there is none on the system, a static build is installed with the Python requirements.
 
 ```bash
-git clone https://github.com/Mahalet-Yo/StoryboardSchema.git && cd StoryboardSchema
+git clone https://github.com/Mahalet-Yo/ai-content-generation.git && cd ai-content-generation
 cp .env.example .env          # add a Gemini key (AI Studio) and a Cloudflare Workers AI token
 make film                     # storyboard.json -> outputs/final/film.{vertical,horizontal}.mp4
 ```
