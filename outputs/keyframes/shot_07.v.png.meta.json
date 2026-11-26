@@ -1,10 +1,10 @@
 {
-  "input_hash": "6a36b1beaaad734232a50aa8aa8dcec35e443af5647c3eca7f455f78b9850620",
-  "output_hash": "96fd6cd94868b933fca88cbb3e44359cc910407b0e750550357eeeaa97356992",
-  "run_id": "20261126T230056-86dd",
-  "created": "2026-11-26T20:06:04Z",
+  "input_hash": "15b6b5cd6f3bdfe48414481b3002dfebf2317daf2b97db631724eb385370c0d4",
+  "output_hash": "b4883df3b81bad16e7a5e43a3bc80c297709ab022eae488f7286a899fc03da3e",
+  "run_id": "20261126T195500-384b",
+  "created": "2026-11-26T16:58:00Z",
   "inputs": {
-    "prompt": "wide ethereal view of soft luminous clouds and warm golden rays of morning light over Addis Ababa far below, the city small and calm under the sky, serene reverent atmosphere. vertical 9:16 composition. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, a modest middle-income family home in Addis Ababa: plastered walls, a sofa with a woven cover, a small coffee table with a jebena, family photos on the wall, subject centred in frame, realistic, no text, no lettering",
+    "prompt": "wide ethereal view of soft luminous clouds and warm golden rays of morning light over the highlands far below, serene reverent atmosphere. vertical 9:16 composition. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, Ethiopian highland home, subject centred in frame, painterly but realistic, no text, no lettering",
     "size": [
       768,
       1344

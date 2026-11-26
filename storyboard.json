@@ -229,14 +229,15 @@
       "duration_sec": 10,
       "camera_type": "extreme_wide",
       "characters": [],
-      "keyframe_prompt": "wide ethereal view of soft luminous clouds and warm golden rays of morning light over Addis Ababa far below, the city small and calm under the sky, serene reverent atmosphere",
+      "keyframe_prompt": "wide ethereal view of soft luminous clouds and warm golden rays of morning light over the highlands far below, serene reverent atmosphere",
       "seed": 107,
       "camera_move": "tilt_down",
       "motion_prompt": "slow forward drift through soft golden light",
       "narration_am": "ከሰማይም አባቴ ሕይወቴን ሲያይ፣ ልቡ በደስታ ይሞላል።",
       "narration_en": "And when my father looks on my life from heaven, his heart fills with joy.",
       "music_cue": "fulfilment",
-      "narration_take": 2
+      "narration_take": 2,
+      "style_override": "warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, Ethiopian highland home, subject centred in frame, painterly but realistic, no text, no lettering"
     },
     {
       "shot_id": "shot_08",

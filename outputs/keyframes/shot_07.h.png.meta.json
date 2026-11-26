@@ -1,10 +1,10 @@
 {
-  "input_hash": "960357849a3dcd4d93b35fe0e409392f7cc1b10abaf19f6a09f87ff70aa3ff73",
-  "output_hash": "a843a9c0ede93bb54fbf8e0c8384dcfe889c2953fda7ed775722d210fca07dd4",
-  "run_id": "20261126T230056-86dd",
-  "created": "2026-11-26T20:06:16Z",
+  "input_hash": "615f738b5b93cf2038f40869be6629da48483d876ffb5abc212bad81870a4fa0",
+  "output_hash": "13bdc05ac120b01592c03c5296523be52ce8f20a4890a4b7f789d2c57180cc85",
+  "run_id": "20261126T195500-384b",
+  "created": "2026-11-26T16:58:08Z",
   "inputs": {
-    "prompt": "The same scene, same people, same light and same moment as the last reference image, recomposed as a wide frame. wide ethereal view of soft luminous clouds and warm golden rays of morning light over Addis Ababa far below, the city small and calm under the sky, serene reverent atmosphere. horizontal 16:9 widescreen composition. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, a modest middle-income family home in Addis Ababa: plastered walls, a sofa with a woven cover, a small coffee table with a jebena, family photos on the wall, subject centred in frame, realistic, no text, no lettering",
+    "prompt": "The same scene, same people, same light and same moment as the last reference image, recomposed as a wide frame. wide ethereal view of soft luminous clouds and warm golden rays of morning light over the highlands far below, serene reverent atmosphere. horizontal 16:9 widescreen composition. warm cinematic film still, 35mm film grain, soft natural window light, warm earth tones with golden amber highlights and soft sky blue, shallow depth of field, Ethiopian highland home, subject centred in frame, painterly but realistic, no text, no lettering",
     "size": [
       1344,
       768
@@ -13,9 +13,9 @@
     "steps": 4,
     "model": "@cf/black-forest-labs/flux-2-klein-4b",
     "refs": [
-      "96fd6cd94868b933fca88cbb3e44359cc910407b0e750550357eeeaa97356992"
+      "b4883df3b81bad16e7a5e43a3bc80c297709ab022eae488f7286a899fc03da3e"
     ],
     "ref_max_px": 496
   },
-  "seed_used": 1107
+  "seed_used": 107
 }
