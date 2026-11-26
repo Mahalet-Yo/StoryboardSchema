@@ -1,156 +1,127 @@
+"""Stage: narration. One WAV per shot from Gemini TTS, cached by text + voice + style + model + take.
+
+Gemini TTS moved to the Interactions API (/v1beta/interactions); the old generateContent +
+speechConfig request now fails with 400 (FAILURES.md F1). There is no seed, so `narration_take`
+in the storyboard stands in for one: bump it to ask for a new performance of the same line.
+"""
+
+from __future__ import annotations
+
 import base64
-import json
-import os
-import subprocess
-import sys
 import time
 from pathlib import Path
-import jsonschema
-from google import genai
-from google.genai import types
-from dotenv import load_dotenv
 
-load_dotenv()
+import requests
 
-# --- FIX: Ensure project root is in Python's search path ---
-root_dir = Path(__file__).resolve().parent.parent
-if str(root_dir) not in sys.path:
-    sys.path.insert(0, str(root_dir))
-# ------------------------------------------------------------
+from .common import (
+    OUTPUTS,
+    PermanentError,
+    TransientError,
+    call_with_retry,
+    classify_http,
+    compute_hash,
+    is_fresh,
+    load_storyboard,
+    media_duration,
+    read_meta,
+    rel,
+    require_env,
+    write_artifact,
+)
 
-from pipeline.common import SCHEMA_PATH, STORYBOARD_PATH, compute_hash, log_run
-
-OUTPUT_DIR = Path("outputs/narration")
-CACHE_DIR = Path("outputs/cache/narration")
-
-MODEL_ID = "gemini-3.8-flash-tts"
-VOICE_NAME = "Kore"
-
-
-def validate_storyboard() -> dict:
-    schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
-    storyboard = json.loads(STORYBOARD_PATH.read_text(encoding="utf-8"))
-    jsonschema.validate(instance=storyboard, schema=schema)
-    return storyboard
+URL = "https://generativelanguage.googleapis.com/v1beta/interactions"
+OUT_DIR = OUTPUTS / "narration"
+SAMPLE_RATE = 24_000
+# List price per token (USD), for COSTS.md; real spend on the free tier is zero.
+LIST_PRICE = {"gemini-3.8-flash-tts": (0.50e-6, 9.00e-6), "gemini-3.8-flash-lite-tts": (0.50e-6, 6.00e-6)}
+AUDIO_TOKENS_PER_SECOND = 25
 
 
-def extract_audio_bytes(response) -> bytes:
-    if getattr(response, "candidates", None):
-        for cand in response.candidates:
-            content = getattr(cand, "content", None)
-            for part in getattr(content, "parts", None) or []:
-                inline = getattr(part, "inline_data", None)
-                if inline and getattr(inline, "data", None):
-                    data = inline.data
-                    # Handle case where data is a base64 string or bytes object containing base64 text
-                    if isinstance(data, bytes):
-                        try:
-                            # Try decoding as utf-8 base64 string first
-                            return base64.b64decode(data.decode("utf-8"))
-                        except Exception:
-                            return data  # Fallback to raw bytes if not base64
-                    elif isinstance(data, str):
-                        return base64.b64decode(data)
-                    return bytes(data)
-    raise ValueError("No inline audio bytes returned by Gemini TTS")
+def narration_path(shot_id: str) -> Path:
+    return OUT_DIR / f"{shot_id}.wav"
 
 
-def audio_to_mp3(audio_bytes: bytes, out_mp3: Path, sample_rate: int = 24000) -> None:
-    # If RIFF/WAV header is present, let FFmpeg detect container automatically; otherwise treat as 24kHz mono s16le PCM
-    if audio_bytes[:4] == b"RIFF":
-        cmd = ["ffmpeg", "-y", "-i", "pipe:0", "-c:a", "libmp3lame", "-b:a", "192k", str(out_mp3)]
-    else:
-        cmd = [
-            "ffmpeg", "-y",
-            "-f", "s16le",
-            "-ar", str(sample_rate),
-            "-ac", "1",
-            "-i", "pipe:0",
-            "-c:a", "libmp3lame",
-            "-b:a", "192k",
-            str(out_mp3),
-        ]
-    proc = subprocess.run(cmd, input=audio_bytes, capture_output=True)
-    if proc.returncode != 0:
-        raise RuntimeError(f"FFmpeg audio conversion failed: {proc.stderr.decode(errors='replace')}")
-
-
-def run_narration() -> None:
-    storyboard = validate_storyboard()
-    api_key = os.getenv("GEMINI_API_KEY")
-    if not api_key:
-        raise RuntimeError("Missing GEMINI_API_KEY environment variable. Set it in your local .env or environment.")
-
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
-
-    client = genai.Client(api_key=api_key, http_options=types.HttpOptions(api_version="v1beta"))
-    lang = storyboard.get("language", "am")
-
-    for shot in storyboard["shots"]:
-        shot_id = shot["shot_id"]
-        text = shot["narration_am"] if lang == "am" else shot["narration_en"]
-        seed = shot.get("seed", 0)
-
-        payload = {
-            "stage": "narration",
-            "shot_id": shot_id,
-            "model": MODEL_ID,
-            "voice": VOICE_NAME,
-            "language": lang,
-            "text": text,
-            "seed": seed,
+def _synthesise(model: str, voice: str, style: str, text: str):
+    def call():
+        body = {
+            "store": False,
+            "model": model,
+            "input": [{"type": "user_input", "content": [
+                {"type": "text", "text": text, "annotations": [{"type": "speech_metadata", "style": style}]}
+            ]}],
+            "response_format": {"type": "audio", "mime_type": "audio/wav", "sample_rate": SAMPLE_RATE},
+            "generation_config": {"speech_config": [{"voice": voice}]},
         }
-        digest = compute_hash(payload)
-        marker = CACHE_DIR / f"{shot_id}_{digest}.json"
-        out_mp3 = OUTPUT_DIR / f"{shot_id}.mp3"
-
-        if marker.exists() and out_mp3.exists():
-            print(f"Cached: {shot_id} ({out_mp3})")
-            continue
-
-        t0 = time.perf_counter()
         try:
-            response = client.models.generate_content(
-                model=MODEL_ID,
-                contents=text,
-                config=types.GenerateContentConfig(
-                    response_modalities=["AUDIO"],
-                    speech_config=types.SpeechConfig(
-                        voice_config=types.VoiceConfig(
-                            prebuilt_voice_config=types.PrebuiltVoiceConfig(voice_name=VOICE_NAME)
-                        )
-                    ),
-                ),
-            )
-            latency = time.perf_counter() - t0
-            audio_bytes = extract_audio_bytes(response)
-            audio_to_mp3(audio_bytes, out_mp3)
-            marker.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+            resp = requests.post(URL, json=body, headers={"x-goog-api-key": require_env("GEMINI_API_KEY")}, timeout=180)
+        except (requests.Timeout, requests.ConnectionError) as exc:
+            raise TransientError(f"network: {exc}") from exc
+        if not resp.ok:
+            raise classify_http(resp.status_code, resp.text, resp.headers.get("Retry-After"))
+        data = resp.json()
+        audio = [c for s in data.get("steps", []) if s.get("type") == "model_output"
+                 for c in s.get("content", []) if c.get("type") == "audio"]
+        if not audio:
+            raise TransientError(f"no audio in response (status={data.get('status')})")
+        wav = base64.b64decode(audio[-1]["data"])
+        if wav[:4] != b"RIFF":
+            raise PermanentError("expected a WAV container from TTS")
+        seconds = (len(wav) - 44) / (SAMPLE_RATE * 2)
+        usage = data.get("usage") or {}
+        units = {"input_tokens": usage.get("total_input_tokens"), "output_tokens": usage.get("total_output_tokens"),
+                 "audio_s": round(seconds, 3)}
+        price = None
+        if model in LIST_PRICE:
+            p_in, p_out = LIST_PRICE[model]
+            out_tokens = units["output_tokens"] or seconds * AUDIO_TOKENS_PER_SECOND
+            price = round((units["input_tokens"] or len(text)) * p_in + out_tokens * p_out, 6)
+        return wav, units, price
 
-            log_run(
-                stage="narration",
-                model=MODEL_ID,
-                parameters={"shot_id": shot_id, "voice": VOICE_NAME, "language": lang, "chars": len(text)},
-                seed=seed,
-                latency_sec=latency,
-                cost_usd=0.0,
-                status="ok",
-            )
-            print(f"Generated {out_mp3} in {latency:.2f}s")
-        except Exception as exc:
-            latency = time.perf_counter() - t0
-            log_run(
-                stage="narration",
-                model=MODEL_ID,
-                parameters={"shot_id": shot_id, "voice": VOICE_NAME, "language": lang, "chars": len(text)},
-                seed=seed,
-                latency_sec=latency,
-                cost_usd=0.0,
-                status=f"error: {exc}",
-            )
-            print(f"Failed {shot_id}: {exc}")
+    return call
+
+
+def run(board: dict | None = None) -> dict[str, float]:
+    """Generate missing or changed lines. Returns {shot_id: speech seconds}."""
+    board = board or load_storyboard()
+    tts = board["providers"]["tts"]
+    models = [tts["model"], *tts.get("fallback_models", [])]
+    durations: dict[str, float] = {}
+    made = 0
+    for shot in board["shots"]:
+        sid = shot["shot_id"]
+        text = shot["narration_am"] if board["language"] == "am" else shot["narration_en"]
+        inputs = {"text": text, "voice": tts["voice"], "style": tts["style"], "take": shot.get("narration_take", 1)}
+        out = narration_path(sid)
+        # The model is deliberately not part of the hash: a line made by the fallback model stays valid.
+        digest = compute_hash({"stage": "narration", **inputs})
+        if is_fresh(out, digest):
+            durations[sid] = read_meta(out).get("speech_s") or media_duration(out)
+            print(f"  narration {sid}: cached")
+            continue
+        last_error: Exception | None = None
+        for model in models:
+            try:
+                result = call_with_retry(
+                    _synthesise(model, tts["voice"], tts["style"], text),
+                    stage="narration", artifact=sid, provider="gemini", model=model,
+                    params={"voice": tts["voice"], "style": tts["style"], "take": inputs["take"], "chars": len(text)},
+                    seed=None, input_hash=digest,
+                )
+            except PermanentError as exc:
+                last_error = exc
+                print(f"  narration {sid}: {model} unavailable ({str(exc)[:90]}), trying next model")
+                continue
+            write_artifact(out, result.value, digest, inputs, {"model": model, "speech_s": result.units["audio_s"]})
+            durations[sid] = result.units["audio_s"]
+            made += 1
+            print(f"  narration {sid}: {model} {result.units['audio_s']:.1f}s of speech in {result.latency_s:.1f}s")
+            break
+        else:
+            raise PermanentError(f"narration {sid}: every TTS model failed: {last_error}")
+        time.sleep(0.5)
+    print(f"narration: {made} generated, {len(durations) - made} cached -> {rel(OUT_DIR)}")
+    return durations
 
 
 if __name__ == "__main__":
-    run_narration()
+    run()
