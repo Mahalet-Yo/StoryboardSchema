@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Mahalet-Yo/StoryboardSchema/schema/storyboard.schema.json",
+  "$id": "https://github.com/Mahalet-Yo/ai-content-generation/schema/storyboard.schema.json",
   "title": "HeritageShortStoryboard",
   "description": "The single contract between every stage of the pipeline (narration, keyframes, shots, music, assembly). Prompts, seeds, models and mix settings live here, not in code.",
   "type": "object",
